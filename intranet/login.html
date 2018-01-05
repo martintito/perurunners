@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PERU RUNNERS | LOGIN</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/font-awesome.min.css">
+		<link rel="stylesheet" href="public/css/form-elements.css">
+        <link rel="stylesheet" href="public/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong><font style="color:red;">PERU RUNNERS</font></strong></h1>
+                        </div>
+                    </div>
+					
+					<div class="row" align="center">
+                        <div class=""  style="width:740px;"> 
+						<form role="form" id="frmIngresar" name="frmIngresar" method="post" class="login-form">
+                            <div class="form-bottom" style="background: rgba(6, 40, 180, 0.7);">
+							<center><h3 style="color:white;font-weight:bold;font-family:sans_serif">BIENVENIDO A PERU RUNNERS ONLINE</h3></center>
+                      
+								<h3 style="color:white;font-family:arial;margin-left:24px;">Acceso de Usuarios y Socios</h3>
+							
+								<div class="form-group">
+			                    	<label class="sr-only" for="form-username">Usuario</label>
+			                        <input type="text" name="form-username" placeholder="Usuario..." class="" id="form-username" style="margin-left:45px;padding-left:20px;size:800px;">
+			                    </div>
+			                    <div class="form-group">
+			                        <label class="sr-only" for="form-password">Password</label>
+			                        <input type="password" name="form-password" placeholder="Password..." class="" id="form-password" style="margin-left:45px;padding-left:20px;size:800px;">
+			                    <font style="color:white;margin-left:190px; font-size:20px;">Administrador</font>	
+								</div>
+								<div>
+			                    	<button type="submit" class="btn" id="button1" style="margin-left:15px; border-radius: 30px 30px;width:300px; background:blue;color: white;">INGRESAR</button>
+									<button type="submit" class="btn" id="button2" style="margin-left:60px; border-radius: 30px 30px;width:300px; background:yellow;color: blue;">Ingresar como Administrador</button>
+								</div>
+								<p><a id="button3" name="button3" href="#" style="color:green;font-size:18px; font-weight:bold; padding-left:50px;">He Olvidado mi contraseña</a>
+								</p>
+								<div align="center">
+								<p style="color:red;"><a href="inscripcion.html"> CREA UNA CUENTA</a>
+								</p>
+								<p style="color:white;">Para cualquier consulta, por favor comunicarse al correo info@perurunners.com
+								</p>
+								</div>
+							</div>
+						</form>
+						</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="public/js/jquery.min.js"></script>
+        <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="public/js/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="public/js/scripts.js"></script>
+        <script type="text/javascript" src="public/js/bootbox.min.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+				$("#button3").click(function(e){
+					e.preventDefault();
+					$(location).attr("href", "restablecer.html");
+				});
+				$("#button2").click(function(e){
+					e.preventDefault();
+					$(location).attr("href", "login_admin.html");
+				});
+			/*	$("#button2").click(function(e){
+					e.preventDefault();
+					$(location).attr("href", "login_socio.html");
+				}); */
+				$("#form-username").focus();	
+				$("form#frmIngresar").submit(IngresarSistema);
+            function IngresarSistema(e) {
+                e.preventDefault();
+                var user = $("#form-username").val();
+                var pass = $("#form-password").val();
+				if($("#form-username").val()=='' || $("#form-password").val()==''){
+					$("#form-username").focus();
+					bootbox.alert("Ingrese su nombre de Usuario y/o Password");
+					$("#form-username").focus();
+				}else{
+                $.post("ajax/UsuarioAjax.php?op=IngresarSistema", {user: user, pass: pass}, function(r) {
+                    if (r) {
+                        //$(location).attr("href", "acceder_socio.php");
+                        $(location).attr("href", "../socios/index.php");
+						//window.location.href = "Adminsitrador.php";
+                    } else {
+                        bootbox.alert("Usuario y/o Password son incorrectos");
+						//alert("Usuario y/o Password son incorrectos");
+						$("#form-username").focus();
+                        $("#form-username").val("");
+                        $("#form-password").val("");
+                        //$("#form-username").focus();
+                    }
+                }); 
+				}
+            }
+            });
+        </script>
+    </body>
+
+</html>

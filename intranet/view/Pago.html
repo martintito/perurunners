@@ -1,0 +1,182 @@
+<div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Pagos</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  	<div class="row">
+	                  	<div class="col-md-12">
+		                    <!--Contenido-->
+                            
+		                    <div class="col-sm-14"  id="VerForm">
+                          <!--
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Categoria</h3>
+            </div>
+        </div>
+      -->
+        <form role="form" name="frmPagos" id="frmPagos" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12 left">
+                    <div class="row">
+                        <div class="col-lg-12 left">
+                            <label id="inputCliente">Socio:</label>
+                            <div class="form-group has-success">
+                                <input id="txtIdUsuario" type="hidden" value="<?php echo $_SESSION["idusuario"] ?>" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
+                                <input id="txtIdSocio" type="hidden" class="form-control" name="txtIdSocio" required placeholder="" autofocus="" />
+								<!--  <input id="txtMonto_Pago" type="hidden" class="form-control" name="txtMonto_Pago" required placeholder="" autofocus="" /> -->
+                                <div class="input-group">
+                                    <input id="txtSocio" type="text" class="form-control" name="txtSocio" required placeholder="Seleccione un Socio" autofocus="" disabled/>
+                                    <span class="input-group-btn" >
+                                          <button type="button" class="btn btn-success" id="btnBuscarSocio"><i class='fa fa-search'></i>
+                                                        Buscar
+                                          </button>
+                                    </span>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 left">
+                    <div class="row">
+						
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Fecha de Pago:</label>
+                                <input id="txtFecha_Pago" type="date" name="txtFecha_Pago" class="form-control" autofocus="" />
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Tipo de Pago:</label>
+                                <select id="cboTipo_Pago" required="" name="cboTipo_Pago" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Monto (*):</label>
+                                <input id="txtMonto" type="text" name="txtMonto" class="form-control" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">   
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
+                        <h5></h5>
+                        <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
+                        <a href="Pago.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                        <hr>
+                        <span class="lead text-primary"></span>
+                        
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+<button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file"></i> Nuevo</button>
+
+
+		                    <br><br>
+		                    <div id="VerListado" class="table-responsive">
+
+
+            		<table id="tblPagos" class="table table-striped table-bordered table-condensed table-hover" cellspacing="0" cellpadding="0" width="100%">
+                    <thead>
+                        <tr>
+                        	<th>#</th>
+                            <th>Nombres</th>
+                            <th>Sede</th>
+                            <th>Tipo Pago</th>
+							<th>Fecha Pago</th>
+                            <th>Fecha Regis</th>
+							<th>Monto Pago</th>
+							<th>Estado</th>
+                        </tr>
+                    </thead>
+             
+                    <tfoot>
+                        <tr>
+							<th>#</th>
+                            <th>Nombres</th>
+                            <th>Sede</th>
+                            <th>Tipo Pago</th>
+							<th>Fecha Pago</th>
+                            <th>Fecha Regis</th>
+							<th>Monto Pago</th>
+							<th>Estado</th>
+                        </tr>
+                    </tfoot>
+             
+                    <tbody id="pagos">
+
+                    </tbody>
+                </table>
+</div>
+		                    <!--Fin-Contenido-->
+                  		</div>
+                  	</div><!-- /.row -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+<div id="modalListadoSocio" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Listado de Socios</h4>
+      </div>
+      <div class="modal-body">
+      <div class="table-responsive">
+        <table id="tblSocios" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Nombre del Socio</th>
+                            <th>Sede</th>
+                            <th>Fecha Registro</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </thead>
+             
+                    <tfoot>
+                        <tr>
+                            <th>Seleccione</th>
+                            <th>#</th>
+                            <th>Nombre del Socio</th>
+                            <th>Sede</th>
+                            <th>Fecha Registro</th>
+                            <th>E-Mail</th>
+                        </tr>
+                    </tfoot>
+             
+                    <tbody id="Socio">
+
+                    </tbody>
+                </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Cerrar</button>
+        <button type="button" id="btnAgregarSocio" class="btn btn-primary">
+<i class="fa fa-plus"></i> Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    
+    $('#liPagos').addClass("treeview active");
+    $('#liPago').addClass("active");
+
+</script>

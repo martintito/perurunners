@@ -1,0 +1,378 @@
+<div class="box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Socios</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  	<div class="row">
+	                  	<div class="col-md-12">
+		                    <!--Contenido-->
+                            
+		                    <div class="col-sm-14"  id="VerForm">
+                          <!--
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Categoria</h3>
+            </div>
+        </div>
+      -->
+        <form role="form" name="frmSocio" id="frmSocio" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-lg-12 left">
+                    <div class="row">
+                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                            <label>Los campos con (*) son olbigatorios</label>
+                        </div>
+                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <input id="txtIdSocio" type="hidden" maxlength="50" class="form-control" name="txtIdSocio" placeholder="" autofocus="" />
+                                <label>Apellido Paterno (*):</label>
+                                <input id="txtApe_pat" type="text" maxlength="40" name="txtApe_pat" required="" class="form-control" placeholder="Apellidos" autofocus="" />
+                            </div>
+                        </div>
+						 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                 <label>Apellido Materno (*):</label>
+                                <input id="txtApe_mat" type="text" maxlength="40" name="txtApe_mat" required="" class="form-control" placeholder="Apellidos" autofocus="" />
+                            </div>
+                        </div>
+                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Nombres (*):</label>
+                                <input id="txtNombres" type="text" maxlength="20" name="txtNombres" required="" class="form-control" placeholder="Nombre" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 left">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Dirección:</label>
+                                <input id="txtDireccion" type="text" maxlength="100" name="txtDireccion" placeholder="Ingrese la dirección" class="form-control" autofocus="" />
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Distrito (*):</label>
+                                <select id="cboTipo_Distritos" required="" name="cboTipo_Distritos" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>País (*):</label>
+                                <select id="cboPaises" required="" name="cboPaises" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-12 left">
+                    <div class="row">
+					 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Email (*):</label>
+                                <input id="txtEmail" type="mail" maxlength="70" name="txtEmail"  class="form-control" placeholder="Ingrese el email" autofocus="" />
+                            </div>
+                        </div>	
+						<!--
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Foto (*):</label>
+                                <input id="imagenEmp" type="file" class="form-control" name="imagenEmp" autofocus="" />
+								<input id="txtRutaImgEmp" type="hidden" class="form-control" name="txtRutaImgEmp" autofocus="" />
+                            </div>
+                        </div>
+						-->
+						<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Estado Civil (*):</label>
+                                <select class="form-control" required="" name="txtEstado_civil" id="txtEstado_civil" style="">
+									<option value="Soltero">Soltero</option>
+									<option value="Casado">Casado</option>
+									<option value="Viudo">Viudo</option>
+									<option value="Divorciado">Divorciado</option>
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Género (*):</label>
+                                <select class="form-control" required="" name="txtGenero" id="txtGenero" style="">
+									<option value="M">Masculino</option>
+									<option value="F">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>    
+				</div>	
+				<div class="col-lg-12 left">
+                    <div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group has-success">
+                                <label>Tipo Documento (*):</label>
+                                <select id="cboTipo_Documento" required="" name="cboTipo_Documento" class="form-control">
+
+                                </select>
+                            </div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Nro Documento (*):</label>
+                                <input id="txtNum_Documento" type="text" maxlength="20" name="txtNum_Documento" required="" class="form-control" placeholder="Número de documento" autofocus="" />
+                            </div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+							<div class="form-group has-success">
+                                <label>Fecha Nacimiento (*):</label>
+                                <input id="txtFecha_Nacimiento" type="date" name="txtFecha_Nacimiento" class="form-control" autofocus="" />
+                            </div>
+                        </div>
+					</div>
+                </div>	
+                <div class="col-lg-12 left">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Teléfono:</label>
+                                <input id="txtTelefono" type="text" maxlength="20" name="txtTelefono" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">	
+							<div class="form-group has-success">
+                                <label>Celular (*):</label>
+                                <input id="txtCelular" type="text" maxlength="20" name="txtCelular" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Pertenece a un club (*):</label>
+                                <input id="txtClub" type="text" maxlength="20" name="txtClub" required="" class="form-control" placeholder="Ingrese nombre del club" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 left">
+                    <div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Talla Polo (*):</label>
+                                <select id="txtPolo" required="" name="txtPolo" class="form-control">
+									<option value="S">S</option>
+									<option value="M">M</option>
+									<option value="L">L</option>
+									<option value="XL">XL</option>
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Talla Zapatilla (*):</label>
+                                <select class="form-control" required="" name="txtZapatilla" id="txtZapatilla">
+                                  	<option value="3.5">3.5</option>
+									<option value="4">4</option>
+									<option value="4.5">4.5</option>
+									<option value="5">5</option>
+									<option value="5.5">5.5</option>
+									<option value="6">6</option>
+									<option value="6.5">6.5</option>
+									<option value="7">7</option>
+									<option value="7.5">7.5</option>
+									<option value="8">8</option>
+									<option value="8.5">8.5</option>
+									<option value="9">9</option>
+									<option value="9.5">9.5</option>
+									<option value="10">10</option>
+									<option value="10.5">10.5</option>
+									<option value="11">11</option>
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                 <label>Corre por semana (*):</label>
+                                <input id="txtCorre" type="text" maxlength="40" name="txtCorre" required="" class="form-control" placeholder="Ingrese corre por semana" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				 <div class="col-lg-12 left">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+				<div class="col-lg-12 left">
+                    <div class="row">
+						 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Discapacidad (*):</label>
+                                <input id="txtDiscapacidad" type="text" maxlength="40" name="txtDiscapacidad" required="" class="form-control" placeholder="Ingrese la discapacidad" autofocus="" />
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Nombre Contacto (*):</label>
+                                <input id="txtNombre_contacto" type="text" maxlength="20" name="txtNombre_contacto" required="" class="form-control" placeholder="Ingrese nombre del contacto" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Teléfono Contacto:</label>
+                                <input id="txtTelefono_contacto" type="text" maxlength="20" name="txtTelefono_contacto" class="form-control" placeholder="Ingrese teléfono del contacto" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-12 left">
+                    <div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Sede (*):</label>
+                                <select id="cboTipo_Sedes" required="" name="cboTipo_Sedes" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+								<label>Membresía (*):</label>
+                                <select id="cboTipo_Membresias" required="" name="cboTipo_Membresias" class="form-control">
+
+                                </select>
+                            </div>
+                        </div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Estado (*):</label>
+                                <select class="form-control" required="" name="txtEstado" id="txtEstado">
+								<option value="U">Inactivo</option>
+                                  <option value="A">Activo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-12 left">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Tipo de Tarjeta (*):</label>
+								<select id="txtTipo_tarjeta" required="" name="txtTipo_tarjeta" class="form-control">
+                                	<option value="credito" selected="">Crédito</option>
+									<option value="debito">Débito</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">	
+							<div class="form-group has-success">
+                                <label>Número de Tarjeta (*):</label>
+                                <input id="txtNro_tarjeta" type="text" maxlength="20" name="txtNro_tarjeta" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Entidad Financiera (*):</label>
+                                <select id="cboBanco" required="" name="cboBanco" class="form-control">
+
+                                </select>
+							</div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-12 left">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                            <div class="form-group has-success">
+                                <label>Login (*):</label>
+                                <input id="txtLogin" type="text" class="form-control" required="" maxlength="50" name="txtLogin" autofocus="" />
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                            <div class="form-group">
+                                <div class="form-group has-success">
+                                    <label>Clave (*):</label>
+                                    <input id="txtClave" type="text" required="" class="form-control" maxlength="32" name="txtClave" autofocus="" />
+                                    <input id="txtClaveOtro" type="password" class="form-control" maxlength="32" name="txtClaveOtro" autofocus="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
+                        <br>
+                        <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Actualizar</button>
+                        <a href="Socio.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+                        <hr>
+                        <span class="lead text-primary"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+	<!--<button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file" disabled></i> Nuevo</button>-->
+		    <div id="VerListado" class="table-responsive">
+            		<table id="tblSocio" class="table table-striped table-bordered table-condensed table-hover" cellspacing="0" cellpadding="0" width="100%">
+                    <thead>
+                        <tr>
+                        	<th>#</th>
+                            <th>Nombres</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>Email</th>
+							<th>Fecha Reg</th>
+                            <th>Teléf Fijo</th>
+							<th>Teléf Celu</th>
+							<th>Sede</th>
+							<th>T. Polo</th>
+                            <th>T. Zapa</th>
+							<th>Pais</th>
+							<th>Foto</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombres</th>
+                            <th>Documento</th>
+                            <th>Dirección</th>
+                            <th>Email</th>
+							<th>Fecha Reg</th>
+                            <th>Teléf Fijo</th>
+							<th>Teléf Celu</th>
+							<th>Sede</th>
+							<th>T. Polo</th>
+                            <th>T. Zapa</th>
+							<th>Pais</th>
+                            <th>Foto</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </tfoot>
+             
+                    <tbody id="socio">
+
+                    </tbody>
+                </table>
+			</div>
+		                    <!--Fin-Contenido-->
+                  		</div>
+                  	</div><!-- /.row -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+<script type="text/javascript">
+    
+    $('#liMantenimiento').addClass("treeview active");
+    $('#liSocios').addClass("active");
+
+</script>

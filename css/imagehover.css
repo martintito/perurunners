@@ -1,0 +1,222 @@
+/*
+ * ImageHover.css - http://www.imagehover.io
+ * Version 1.0
+ * Author: Ciarán Walsh
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ */
+@font-face {
+    font-family: Bebas;
+    src: url(../fonts/BebasNeue.otf);
+}
+[class^='imghvr-'],
+[class*=' imghvr-'] {
+  position: relative;
+  display: inline-block;
+  margin: 0px;
+  max-width: 100%;
+  background-image: none;
+/*  background-image: url(../img/vermas.jpg);*/
+  color: #fff;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+[class^='imghvr-'] > img,
+[class*=' imghvr-'] > img {
+  vertical-align: top;
+  max-width: 100%;
+}
+[class^='imghvr-'] figcaption,
+[class*=' imghvr-'] figcaption {
+  background-color: rgba(46,79,122,0.8);
+  padding-left: 90px;
+  padding-top: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+}
+[class^='imghvr-'] figcaption h1,
+[class*=' imghvr-'] figcaption h1,
+[class^='imghvr-'] figcaption h2,
+[class*=' imghvr-'] figcaption h2,
+[class^='imghvr-'] figcaption h3,
+[class*=' imghvr-'] figcaption h3,
+[class^='imghvr-'] figcaption h4,
+[class*=' imghvr-'] figcaption h4,
+[class^='imghvr-'] figcaption h5,
+[class*=' imghvr-'] figcaption h5,
+[class^='imghvr-'] figcaption h6,
+[class*=' imghvr-'] figcaption h6 {
+font-family: 'Bebas', sans-serif;
+font-size: 55px;
+color: #ffffff;
+font-weight:100;
+}
+[class^='imghvr-'] a,
+[class*=' imghvr-'] a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+[class^='imghvr-'],
+[class*=' imghvr-'],
+[class^='imghvr-']:before,
+[class^='imghvr-']:after,
+[class*=' imghvr-']:before,
+[class*=' imghvr-']:after,
+[class^='imghvr-'] *,
+[class*=' imghvr-'] *,
+[class^='imghvr-'] *:before,
+[class^='imghvr-'] *:after,
+[class*=' imghvr-'] *:before,
+[class*=' imghvr-'] *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+/* imghvr-fade-*
+   ----------------------------- */
+[class^='imghvr-fade'] figcaption,
+[class*=' imghvr-fade'] figcaption {
+  opacity: 0;
+}
+[class^='imghvr-fade']:hover > img,
+[class*=' imghvr-fade']:hover > img {
+  opacity: 1;
+}
+[class^='imghvr-fade']:hover figcaption,
+[class*=' imghvr-fade']:hover figcaption {
+  opacity: 1;
+}
+[class^='imghvr-fade']:hover > img,
+[class*=' imghvr-fade']:hover > img,
+[class^='imghvr-fade']:hover figcaption,
+[class*=' imghvr-fade']:hover figcaption {
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+/* imghvr-fade
+   ----------------------------- */
+
+/*@media only screen and (max-width: 1200px), (min-width: 1200px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 3)
+{
+figcaption {
+  background-color: rgba(46,79,122,0.8);
+  padding-left: 0px;
+  padding-top: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+}
+}*/
+/*--------------------------------------------------------------------*/
+[class^='imghvr2-'],
+[class*=' imghvr2-'] {
+  position: relative;
+  display: inline-block;
+  margin: 0px;
+  max-width: 100%;
+  background-image: none;
+  color: #fff;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+[class^='imghvr2-'] > img,
+[class*=' imghvr2-'] > img {
+  vertical-align: top;
+  max-width: 100%;
+}
+[class^='imghvr2-'] figcaption,
+[class*=' imghvr2-'] figcaption {
+  background-color: rgba(46,79,122,0.8);
+  padding-left: 0px;
+  padding-top: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #ffffff;
+}
+[class^='imghvr2-'] figcaption h1,
+[class*=' imghvr2-'] figcaption h1,
+[class^='imghvr2-'] figcaption h2,
+[class*=' imghvr2-'] figcaption h2,
+[class^='imghvr2-'] figcaption h3,
+[class*=' imghvr2-'] figcaption h3,
+[class^='imghvr2-'] figcaption h4,
+[class*=' imghvr2-'] figcaption h4,
+[class^='imghvr2-'] figcaption h5,
+[class*=' imghvr2-'] figcaption h5,
+[class^='imghvr2-'] figcaption h6,
+[class*=' imghvr2-'] figcaption h6 {
+font-family: 'Bebas', sans-serif;
+font-size: 55px;
+color: #ffffff;
+font-weight:100;
+}
+[class^='imghvr2-'] a,
+[class*=' imghvr2-'] a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+[class^='imghvr2-'],
+[class*=' imghvr2-'],
+[class^='imghvr2-']:before,
+[class^='imghvr2-']:after,
+[class*=' imghvr2-']:before,
+[class*=' imghvr2-']:after,
+[class^='imghvr2-'] *,
+[class*=' imghvr2-'] *,
+[class^='imghvr2-'] *:before,
+[class^='imghvr2-'] *:after,
+[class*=' imghvr2-'] *:before,
+[class*=' imghvr2-'] *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+[class^='imghvr2-fade'] figcaption,
+[class*=' imghvr2-fade'] figcaption {
+  opacity: 0;
+}
+[class^='imghvr2-fade']:hover > img,
+[class*=' imghvr2-fade']:hover > img {
+  opacity: 1;
+}
+[class^='imghvr2-fade']:hover figcaption,
+[class*=' imghvr2-fade']:hover figcaption {
+  opacity: 1;
+}
+[class^='imghvr2-fade']:hover > img,
+[class*=' imghvr2-fade']:hover > img,
+[class^='imghvr2-fade']:hover figcaption,
+[class*=' imghvr2-fade']:hover figcaption {
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}

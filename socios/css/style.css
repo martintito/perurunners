@@ -1,0 +1,1354 @@
+body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 2px;
+	margin-left:20%;
+}
+header #menuTop{
+	margin-top:2px;
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	width:auto;
+}
+
+header #menu-ul{
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+	margin-left:8%;
+	padding-top: 5px;
+	display: inline-block;
+}
+
+
+header hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+figure{
+	margin: 0;
+	padding: 0;
+}
+
+section{
+	background: #3e8ace;
+	margin: 0;
+	padding: 0;
+}
+
+section #main{
+	background:#3e8ace;
+	margin: 0;
+	padding: 0;
+}
+section #dashboard{
+	margin: 0;
+	padding: 0;
+}
+section .service{
+	background: #fefefe;
+	display: inline-block;
+	border: 5px solid #3e8ace;
+	border-radius: 5px;
+	margin-top:3px;
+	margin-bottom:3px;
+	padding-left: 5%;
+}
+section #container-icon{
+	padding: 0;
+	width: 30%;
+	text-align: center;
+}
+section span{
+	color:#34495e;
+	margin-top: 15px;
+	font-size: 60px;
+}
+section span:hover{
+	color:#2980b9;
+	margin-top: -20px;
+	transition: 0.5s;
+}
+section #icon-service{
+	text-align: middle;
+}
+section #container-description{
+	margin: 0;
+	padding: 0;
+
+}
+section .description-service{
+	display: inline-block;
+	padding:0;
+}
+
+section h2.title-service{
+	font-weight: bold;
+	color:#34495e;
+}
+section h2.title-service:hover{
+	color:#2980b9;
+}
+
+section h2.title-service a:hover{
+	text-decoration: none;
+}
+
+section #sidebar{
+	background: #fefefe;
+	font-family: verdana;
+	font-size: 16px;
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+}
+section #sidebar a{
+	font-size: 20px;
+	border-bottom:1px solid #EEEEEE;
+	color: #000;
+}
+section #sidebar a:hover{
+	color:#3498db;
+}
+section #sidebar #title-sidebar h2{
+	text-align: center;
+}
+footer {
+font-size: 16px;
+padding-top: 20px;
+margin-top: 6%;
+background: #fefefe;
+color: #000;
+clear: both;
+}
+
+footer #colums-footer{
+	height:290px;
+	background: #fefefe;
+	color:#000;
+}
+footer #col-1{
+	font-size: 20px;
+}
+footer #links-col{
+	text-align: left;
+}
+footer #col-1 h3{
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+footer #contact-data p {
+	font-size: 20px;
+}
+footer #col-2 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #col-3{
+	overflow: hidden;
+}
+footer #col-3 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+
+}
+footer #redes-sociales a img{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+}
+footer #redes-sociales a img:hover{
+	width: 64px;
+	height: 64px;
+	margin-top: -10px;
+	transition:0.5s;
+}
+footer #colums-footer figure{
+	text-align: center;
+	display: inline-block;
+}
+footer #col-4{
+	display: inline-block;
+	overflow: hidden;
+}
+footer #col-4 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #colums-footer figure img{
+	margin-top: 10px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+footer #colums-footer figure img:hover{
+	margin-top: -10px;
+	width: 64px;
+	height: 64px;
+	transition:0.5s;
+}
+footer #copyrigth {
+padding-top: 20px;
+text-align: center;
+background: #3e8ace;
+color: #fff;
+height: auto;
+}
+
+/* Estilos de resset-password template*/
+section #container-ressetp{
+	background: #fefefe;
+	border-radius: 5px;
+}
+section #icon-ressetp{
+  font-size: 50px;
+  margin-top: 10px;
+  padding-right: 5px;
+  border-right:1px solid #000;
+}
+section #container-ressetp h1{
+	text-align: left;
+}
+
+section #container-ressetp p{
+
+}
+section #container-ressetp form{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+section #container-ressetp hr{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+section #container-ressetp label{
+	margin-top: 5px;
+}
+
+/*Estilos Registro*/
+
+section #datos-registro form{
+	text-align: left;
+}
+section #button-registro {
+	
+}
+/*---------------------------------------Media Querys----------------------------------------*/
+/*::::::::::::::::::::::: Media Queries Generales :::::::::::::::::::::::*/
+/*-----------------------------------------240 -----------------------------------------*/
+@media screen and (min-width: 240px){
+body{
+font-size:16px;
+}
+     header #logo {
+	 display: block;
+     margin-top: 0;
+     margin-left:5px;
+	 }
+	 header #logo img {
+     margin: 0;
+     }
+	 header #menuTop {
+     margin-top: 2px;
+     margin-left: 10px;
+     display:block;
+     vertical-align: middle;
+	 width: 95%;
+    }
+	header #menu-ul {
+    display: block;
+    }
+	header #login {
+    margin-top: 2px;
+    margin-left: 2%;
+    padding-top: 5px;
+    display: inline-block;
+    }
+	div.i-contenedor{
+	display: table-row-group;
+	} 
+	section .service {
+    background: #fefefe;
+    display: block;
+    border: 5px solid #3e8ace;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 5%;
+    }
+	section #container-icon {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    }
+	section #container-description {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+	section #sidebar {
+    display: none;
+    }
+	footer #colums-footer {
+    height: 100%;
+    background: #fefefe;
+    color: #000;
+	display:block;
+    }
+	footer #contact-data p {
+    font-size: 18px;
+	display:block;
+    }
+	footer #links-col a {
+	display: block;
+	}
+	footer #copyrigth {
+    padding-top: 20px;
+    text-align: center;
+    background: #3e8ace;
+    color: #fff;
+    height: 100%;
+	}
+	
+	
+	/*Estilos de Inicio de sesion para esta resolucion*/
+	.form-signin {
+     max-width: 400px;
+     min-width: 200px;
+     padding: 19px 29px 29px;
+     margin: 0 auto 20px -29px;
+     background-color: #fff;
+     border: 1px solid #e5e5e5;
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+      border-radius: 5px;
+     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+
+
+/*----------------------------------------320--------------------------------------------*/
+@media screen and (min-width: 320px){
+
+     header #logo {
+	 display: block;
+     margin-top: 0;
+     margin-left: 3%;
+	 }
+	 header #logo img {
+     margin: 0;
+     }
+	 header #menuTop {
+     margin-top: 2px;
+     margin-left: 10px;
+     display:block;
+     vertical-align: middle;
+	 width: 95%;
+    }
+	header #menu-ul {
+    display: block;
+    }
+	header #login {
+    margin-top: 2px;
+    margin-left: 15%;
+    padding-top: 5px;
+    display: block;
+    }
+	section .service {
+    background: #fefefe;
+    display: block;
+    border: 5px solid #3e8ace;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 5%;
+    }
+	div.i-contenedor {
+    display: block;
+    }
+	section #container-icon {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    }
+	section #container-description {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    }
+	section #sidebar {
+    display: none;
+    }
+	footer #colums-footer {
+    height: 100%;
+    background: #fefefe;
+    color: #000;
+	display:block;
+    }
+	footer #contact-data p {
+    font-size: 18px;
+	display:block;
+    }
+	footer #links-col a {
+	display: block;
+	}
+	footer #copyrigth {
+    padding-top: 20px;
+    text-align: center;
+    background: #3e8ace;
+    color: #fff;
+    height: 100%;
+	}
+
+	/*Inicio de sesion  320 px*/
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+@media screen and (min-width: 480px){
+     header #logo {
+	 display: block;
+     margin-top: 0;
+     margin-left: 3%;
+	 }
+	 header #logo img {
+     margin: 0;
+     }
+	header #login {
+    margin-top: 2px;
+    margin-left: 30%;
+    padding-top: 5px;
+    display: block;
+    }
+	footer #links-col a {
+    text-align: left;
+	display:block;
+    }
+	footer #col-4 img{
+	display:block;
+	}
+	footer #col-4 figure img{
+	display:inline-block;
+	}
+	/*Inicio de sesion*/
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+@media screen and (min-width:640px){
+    header #logo {
+	 display: block;
+     margin-top: 0;
+     margin-left: 3%;
+	 }
+	 header #logo img {
+     margin: 0;
+     }
+    header #login {
+    margin-top: 2px;
+    margin-left: 30%;
+    padding-top: 5px;
+    display: block;
+    }
+	footer #colums-footer {
+    height: 100%;
+    background: #fefefe;
+    color: #000;
+	display:block;
+    }
+	footer #links-col a {
+    text-align: left;
+    display:block;
+	}
+	footer #contact-data p {
+    font-size: 18px;
+	display:block;
+	}
+	footer #col-4 {
+    display: table-caption;
+    overflow: hidden;
+    }
+	/*Inicio de Sesion*/
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+@media screen and (min-width:768px){
+	body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 0;
+	margin-left:3%;
+	vertical-align: top;
+}
+header #menuTop {
+margin-top: 0;
+margin-left: 10px;
+display: inline-block;
+vertical-align: initial;
+width: auto;
+}
+
+header #menu-ul{
+margin-top:2px;
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+   margin-left: 8%;
+   padding-top: 5px;
+   display: inline-block;
+    vertical-align: top;
+}
+
+	footer #col-4 {
+    display: block;
+    overflow: hidden;
+    }
+    footer{
+	font-size:1em;
+	}
+	footer #contact-data p {
+    font-size: 1em;
+	display:block;
+	}
+	footer #colums-footer {
+    height: 100%;
+    background: #fefefe;
+    color: #000;
+	display:block;
+	font-size:1em;
+    }
+	footer #links-col a {
+	display: block;
+	}
+	/*Inicio de Sesion */
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+
+@media screen and (min-width:800px){
+body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 0;
+	margin-left:3%;
+}
+header #menuTop {
+margin-top: 0;
+margin-left: 10px;
+display: inline-block;
+vertical-align: initial;
+width: auto;
+}
+
+header #menu-ul{
+margin-top:2px;
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+   margin-left: 8%;
+   padding-top: 5px;
+   display: inline-block;
+    vertical-align: top;
+}
+
+	footer #col-4 {
+    display: inline-block;
+    overflow: hidden;
+    }
+	footer #links-col a {
+	display: block;
+	}
+	/*Inicio de Sesion*/
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+}
+@media screen and (min-width: 1024px) {
+	body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 0;
+	margin-left:3%;
+	vertical-align: top;
+}
+header #menuTop {
+margin-top: 0;
+margin-left: 10px;
+display: inline-block;
+vertical-align: initial;
+width: auto;
+}
+
+header #menu-ul{
+margin-top:2px;
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+   margin-left:auto;
+   padding-top: 5px;
+   display: inline-block;
+    vertical-align: top;
+}
+
+
+header hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+figure{
+	margin: 0;
+	padding: 0;
+} 
+    
+    section #sidebar{
+	background: #fefefe;
+	font-family: verdana;
+	font-size: 16px;
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+    }
+	div.i-contenedor{
+	display: inline-block;
+	}
+	
+	section #container-icon {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    }
+	section #container-description {
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    }
+	/*Inicio de Sesion*/
+	.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+
+}
+@media screen and (min-width: 1200px){
+
+	body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 0;
+	margin-left:20%;
+	vertical-align: top;
+}
+header #menuTop {
+margin-top: 0;
+margin-left: 10px;
+display: inline-block;
+vertical-align: initial;
+width: auto;
+}
+
+header #menu-ul{
+margin-top:2px;
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+   margin-left: 8%;
+   padding-top: 5px;
+   display: inline-block;
+    vertical-align: top;
+}
+
+
+
+header hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+figure{
+	margin: 0;
+	padding: 0;
+}
+
+section{
+	background: #3e8ace;
+	margin: 0;
+	padding: 0;
+}
+
+section #main{
+	background:#3e8ace;
+	margin: 0;
+	padding: 0;
+}
+section #dashboard{
+	margin: 0;
+	padding: 0;
+}
+section .service{
+	background: #fefefe;
+	display: inline-block;
+	border: 5px solid #3e8ace;
+	border-radius: 5px;
+	margin-top:3px;
+	margin-bottom:3px;
+	padding-left: 5%;
+}
+section #container-icon{
+	padding: 0;
+	width: 30%;
+	text-align: center;
+}
+section span{
+	color:#34495e;
+	margin-top: 15px;
+	font-size: 60px;
+}
+section span:hover{
+	color:#2980b9;
+	margin-top: -20px;
+	transition: 0.5s;
+}
+section #icon-service{
+	text-align: middle;
+}
+section #container-description{
+	margin: 0;
+	padding: 0;
+
+}
+section .description-service{
+	display: inline-block;
+	padding:0;
+}
+
+section h2.title-service{
+	font-weight: bold;
+	color:#34495e;
+}
+section h2.title-service:hover{
+	color:#2980b9;
+}
+
+section h2.title-service a:hover{
+	text-decoration: none;
+}
+
+section #sidebar{
+	background: #fefefe;
+	font-family: verdana;
+	font-size: 16px;
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+}
+section #sidebar a{
+	font-size: 20px;
+	border-bottom:1px solid #EEEEEE;
+	color: #000;
+}
+section #sidebar a:hover{
+	color:#3498db;
+}
+section #sidebar #title-sidebar h2{
+	text-align: center;
+}
+footer {
+font-size: 16px;
+padding-top: 20px;
+margin-top: 6%;
+background: #fefefe;
+color: #000;
+clear: both;
+}
+
+footer #colums-footer{
+	height:290px;
+	background: #fefefe;
+	color:#000;
+}
+footer #col-1{
+	font-size: 20px;
+}
+footer #links-col{
+	text-align: left;
+}
+footer #col-1 h3{
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+footer #contact-data p {
+	font-size: 20px;
+}
+footer #col-2 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #col-3{
+	overflow: hidden;
+}
+footer #col-3 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+
+}
+footer #redes-sociales a img{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+}
+footer #redes-sociales a img:hover{
+	width: 64px;
+	height: 64px;
+	margin-top: -10px;
+	transition:0.5s;
+}
+footer #colums-footer figure{
+	text-align: center;
+	display: inline-block;
+}
+footer #col-4{
+	display: inline-block;
+	overflow: hidden;
+}
+footer #col-4 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #colums-footer figure img{
+	margin-top: 10px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+footer #colums-footer figure img:hover{
+	margin-top: -10px;
+	width: 64px;
+	height: 64px;
+	transition:0.5s;
+}
+footer #copyrigth {
+padding-top: 20px;
+text-align: center;
+background: #3e8ace;
+color: #fff;
+height: auto;
+}
+
+/* Estilos de resset-password template*/
+section #container-ressetp{
+	background: #fefefe;
+	border-radius: 5px;
+}
+section #icon-ressetp{
+  font-size: 50px;
+  margin-top: 10px;
+  padding-right: 5px;
+  border-right:1px solid #000;
+}
+section #container-ressetp h1{
+	text-align: left;
+}
+
+section #container-ressetp p{
+
+}
+section #container-ressetp form{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+section #container-ressetp hr{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+section #container-ressetp label{
+	margin-top: 5px;
+}
+
+/*Estilos Registro*/
+
+section #datos-registro form{
+	text-align: left;
+}
+section #button-registro {
+	
+}
+/*Inicio de Sesion*/
+.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+
+}
+
+@media screen and (min-width:1500px){
+	body{
+	margin: 0;
+	background: #3e8ace;
+	padding: 0;
+	font-family: arial;
+	font-size: 16px;
+}
+header{
+	margin:0;
+	display:block;
+	background: #fefefe;
+	width: auto;
+}
+header #logo{
+	display: inline-block;
+	margin-top: 0;
+	margin-left:20%;
+	vertical-align: top;
+}
+header #menuTop {
+margin-top: 0;
+margin-left: 10px;
+display: inline-block;
+vertical-align: initial;
+width: auto;
+}
+
+header #menu-ul{
+margin-top:2px;
+display: inline-block;
+}
+
+header #login{
+	margin-top: 2px;
+   margin-left: 8%;
+   padding-top: 5px;
+   display: inline-block;
+    vertical-align: top;
+}
+
+
+header hr
+{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+figure{
+	margin: 0;
+	padding: 0;
+}
+
+section{
+	background: #3e8ace;
+	margin: 0;
+	padding: 0;
+}
+
+section #main{
+	background:#3e8ace;
+	margin: 0;
+	padding: 0;
+}
+section #dashboard{
+	margin: 0;
+	padding: 0;
+}
+section .service{
+	background: #fefefe;
+	display: inline-block;
+	border: 5px solid #3e8ace;
+	border-radius: 5px;
+	margin-top:3px;
+	margin-bottom:3px;
+	padding-left: 5%;
+}
+section #container-icon{
+	padding: 0;
+	width: 30%;
+	text-align: center;
+}
+section span{
+	color:#34495e;
+	margin-top: 15px;
+	font-size: 60px;
+}
+section span:hover{
+	color:#2980b9;
+	margin-top: -20px;
+	transition: 0.5s;
+}
+section #icon-service{
+	text-align: middle;
+}
+section #container-description{
+	margin: 0;
+	padding: 0;
+
+}
+section .description-service{
+	display: inline-block;
+	padding:0;
+}
+
+section h2.title-service{
+	font-weight: bold;
+	color:#34495e;
+}
+section h2.title-service:hover{
+	color:#2980b9;
+}
+
+section h2.title-service a:hover{
+	text-decoration: none;
+}
+
+section #sidebar{
+	background: #fefefe;
+	font-family: verdana;
+	font-size: 16px;
+	display: inline-block;
+	border: 1px solid #EEEEEE;
+	border-radius: 10px;
+	width: 100%;
+	overflow: hidden;
+}
+section #sidebar a{
+	font-size: 20px;
+	border-bottom:1px solid #EEEEEE;
+	color: #000;
+}
+section #sidebar a:hover{
+	color:#3498db;
+}
+section #sidebar #title-sidebar h2{
+	text-align: center;
+}
+footer {
+font-size: 16px;
+padding-top: 20px;
+margin-top: 6%;
+background: #fefefe;
+color: #000;
+clear: both;
+}
+
+footer #colums-footer{
+	height:290px;
+	background: #fefefe;
+	color:#000;
+}
+footer #col-1{
+	font-size: 20px;
+}
+footer #links-col{
+	text-align: left;
+}
+footer #col-1 h3{
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+
+footer #contact-data p {
+	font-size: 20px;
+}
+footer #col-2 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #col-3{
+	overflow: hidden;
+}
+footer #col-3 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+
+}
+footer #redes-sociales a img{
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+}
+footer #redes-sociales a img:hover{
+	width: 64px;
+	height: 64px;
+	margin-top: -10px;
+	transition:0.5s;
+}
+footer #colums-footer figure{
+	text-align: center;
+	display: inline-block;
+}
+footer #col-4{
+	display: inline-block;
+	overflow: hidden;
+}
+footer #col-4 h3{
+	display: inline-block;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+footer #colums-footer figure img{
+	margin-top: 10px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+footer #colums-footer figure img:hover{
+	margin-top: -10px;
+	width: 64px;
+	height: 64px;
+	transition:0.5s;
+}
+footer #copyrigth {
+padding-top:1%;
+text-align: center;
+background: #3e8ace;
+color: #fff;
+height: auto;
+}
+
+/* Estilos de resset-password template*/
+section #container-ressetp{
+	background: #fefefe;
+	border-radius: 5px;
+}
+section #icon-ressetp{
+  font-size: 50px;
+  margin-top: 10px;
+  padding-right: 5px;
+  border-right:1px solid #000;
+}
+section #container-ressetp h1{
+	text-align: left;
+}
+
+section #container-ressetp p{
+
+}
+section #container-ressetp form{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+section #container-ressetp hr{
+	border-color: #ccc;
+	border-style: solid;
+	border-width: 1px 0 0;
+	clear: both;
+	height: 0;
+}
+section #container-ressetp label{
+	margin-top: 5px;
+}
+
+/*Estilos Registro*/
+
+section #datos-registro form{
+	text-align: left;
+}
+section #button-registro {
+	
+}
+/*Inicio de Sesion*/
+.form-signin {
+        max-width: 400px;
+        min-width: 240px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+	  
+}
+
+
+

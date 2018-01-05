@@ -1,0 +1,13 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+
+Rewriterule ^categoria/([0-9]+)/(.+)$ productos.php?categoria=$1&producto=$2
+Rewriterule ^pagina/([0-9]+)/categoria/([0-9]+)/(.+)$ productos.php?page=$1&categoria=$2&producto=$3
+Rewriterule ^marca/([0-9]+)/(.+)$ fabricantes.php?id_fabricante=$1&nombre_marca=$2
+Rewriterule ^pagina/([0-9]+)/marca/([0-9]+)/(.+)$ fabricantes.php?page=$1&id_fabricante=$2&nombre_marca=$3
+Rewriterule ^producto/([0-9]+)/(.+)$ detalle-producto.php?id_producto=$1&producto=$2
+Rewriterule ^ficha-tecnica/([0-9]+)/(.+)$ pdf/documentos/ficha_tecnica.php?id_producto=$1&producto=$2
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
