@@ -260,8 +260,9 @@ switch ($_GET["op"]) {
                     "3"=>$reg->serie,
                     "4"=>$reg->stock_actual,
                     "5"=>$reg->precio_ventapublico,
-                    "6"=>'<img width=100px height=100px src="./'.$reg->imagen.'" />',
-                    "7"=>$reg->fecha
+                    "6"=>$reg->precio_ventadistribuidor,
+                    "7"=>'<img width=100px height=100px src="./'.$reg->imagen.'" />',
+                    "8"=>$reg->fecha
                     );
                 $i++;
             }

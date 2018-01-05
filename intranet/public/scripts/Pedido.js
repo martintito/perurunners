@@ -323,7 +323,8 @@ function init() {
                         {   "mDataProp": "4"},
                         {   "mDataProp": "5"},
                         {   "mDataProp": "6"},
-                        {   "mDataProp": "7"}
+                        {   "mDataProp": "7"},
+                        {   "mDataProp": "8"}
 
                 ],"ajax": 
                     {
