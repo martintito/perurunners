@@ -1,8 +1,8 @@
 $(document).on("ready", init);
 
-function init(){
-	
-	var tabla = $('#tblArticulos').dataTable({
+function init() {
+
+    var tabla = $('#tblArticulos').dataTable({
         dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
@@ -12,135 +12,159 @@ function init(){
         ]
     });
 
-	ListadoArticulos();
-	ComboCategoria();
-	ComboUM();
-	$("#VerForm").hide();
-	$("#txtRutaImgArt").hide();
-	$("form#frmArticulos").submit(SaveOrUpdate);
-	
-	$("#btnNuevo").click(VerForm);
+    ListadoArticulos();
+    ComboCategoria();
+    ComboUM();
+    $("#VerForm").hide();
+    $("#VerForm2").hide();
+    $("#txtRutaImgArt").hide();
+    $("form#frmArticulos").submit(SaveOrUpdate);
 
-	function SaveOrUpdate(e){
-			e.preventDefault();
+    $("#btnNuevo").click(VerForm);
 
-	        var formData = new FormData($("#frmArticulos")[0]);
+    function SaveOrUpdate(e) {
+        e.preventDefault();
 
-	        $.ajax({
+        var formData = new FormData($("#frmArticulos")[0]);
 
-	                url: "./ajax/ArticuloAjax.php?op=SaveOrUpdate",
+        $.ajax({
+            url: "./ajax/ArticuloAjax.php?op=SaveOrUpdate",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (datos)
 
-	                type: "POST",
+            {
 
-	               data: formData,
+                swal("Mensaje del Sistema", datos, "success");
+                ListadoArticulos();
+                OcultarForm();
+                $('#frmArticulos').trigger("reset");
+            }
 
-	                contentType: false,
+        });
+    }
+    ;
 
-	                processData: false,
+    function ComboCategoria() {
+        $.post("./ajax/ArticuloAjax.php?op=listCategoria", function (r) {
+            $("#cboCategoria").html(r);
+        });
+    }
 
-	                success: function(datos)
+    function ComboUM() {
+        $.post("./ajax/ArticuloAjax.php?op=listUM", function (r) {
+            $("#cboUnidadMedida").html(r);
+        });
+    }
 
-	                {
+    function Limpiar() {
+        $("#txtIdArticulo").val("");
+        $("#txtNombre").val("");
+    }
 
-	                    swal("Mensaje del Sistema", datos, "success");
-						  ListadoArticulos();
-						  OcultarForm();
-						  $('#frmArticulos').trigger("reset");
-	                }
+    function VerForm() {
+        $("#VerForm").show();
+        $("#btnNuevo").hide();
+        $("#VerListado").hide();
+    }
+    
+    function VerForm2() {
+        $("#VerForm2").show();
+        $("#btnNuevo").hide();
+        $("#VerListado").hide();
+    }
 
-	            });
-	};
-
-	function ComboCategoria(){
-			$.post("./ajax/ArticuloAjax.php?op=listCategoria", function(r){
-	            $("#cboCategoria").html(r);
-	        });
-	}
-
-	function ComboUM(){
-			$.post("./ajax/ArticuloAjax.php?op=listUM", function(r){
-	            $("#cboUnidadMedida").html(r);
-	        });
-	}
-
-	function Limpiar(){
-			$("#txtIdArticulo").val("");
-		    $("#txtNombre").val("");
-	}
-
-	function VerForm(){
-			$("#VerForm").show();
-			$("#btnNuevo").hide();
-			$("#VerListado").hide();
-	}
-
-	function OcultarForm(){
-			$("#VerForm").hide();// Mostramos el formulario
-			$("#btnNuevo").show();// ocultamos el boton nuevo
-			$("#VerListado").show();
-	}
+    function OcultarForm() {
+        $("#VerForm").hide();// Mostramos el formulario
+        $("#btnNuevo").show();// ocultamos el boton nuevo
+        $("#VerListado").show();
+    }
+    
+    function OcultarForm2() {
+        $("#VerForm2").hide();// Mostramos el formulario
+        $("#btnNuevo").show();// ocultamos el boton nuevo
+        $("#VerListado").show();
+    }
 }
-function ListadoArticulos(){ 
-	var tabla = $('#tblArticulos').dataTable(
-		{   "aProcessing": true,
-       		"aServerSide": true,
-       		dom: 'Bfrtip',
-	        buttons: [
-	            'copyHtml5',
-	            'excelHtml5',
-	            'csvHtml5',
-	            'pdfHtml5'
-	        ],
-        	"aoColumns":[
-        	     	{   "mDataProp": "id"},
-                    {   "mDataProp": "1"},
-                    {   "mDataProp": "2"},
-                    {   "mDataProp": "3"},
-                    {   "mDataProp": "4"},
-                    {   "mDataProp": "5"},
-                    {   "mDataProp": "6"}
+function ListadoArticulos() {
+    var tabla = $('#tblArticulos').dataTable(
+            {"aProcessing": true,
+                "aServerSide": true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
+                "aoColumns": [
+                    {"mDataProp": "id"},
+                    {"mDataProp": "1"},
+                    {"mDataProp": "2"},
+                    {"mDataProp": "3"},
+                    {"mDataProp": "4"},
+                    {"mDataProp": "5"},
+                    {"mDataProp": "6"}
 
-        	],"ajax": 
-	        	{
-	        		url: './ajax/ArticuloAjax.php?op=list',
-					type : "get",
-					dataType : "json",
-					
-					error: function(e){
-				   		console.log(e.responseText);	
-					}
-	        	},
-	        "bDestroy": true
+                ], "ajax":
+                        {
+                            url: './ajax/ArticuloAjax.php?op=list',
+                            type: "get",
+                            dataType: "json",
+                            error: function (e) {
+                                console.log(e.responseText);
+                            }
+                        },
+                "bDestroy": true
 
-    	}).DataTable();
+            }).DataTable();
 
-    };
-function eliminarArticulo(id){
-	bootbox.confirm("¿Esta Seguro de eliminar la Articulo?", function(result){
-		if(result){
-			$.post("./ajax/ArticuloAjax.php?op=delete", {id : id}, function(e){
-                
-				swal("Mensaje del Sistema", e, "success");
-				ListadoArticulos();
+}
+;
+function eliminarArticulo(id) {
+    bootbox.confirm("¿Esta Seguro de eliminar la Articulo?", function (result) {
+        if (result) {
+            $.post("./ajax/ArticuloAjax.php?op=delete", {id: id}, function (e) {
+
+                swal("Mensaje del Sistema", e, "success");
+                ListadoArticulos();
 
             });
-		}
-		
-	})
+        }
+
+    })
 }
 
-function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, descripcion, imagen){
-		$("#VerForm").show();
-		$("#btnNuevo").hide();
-		$("#VerListado").hide();
+function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, descripcion, imagen) {
+    $("#VerForm").show();
+    $("#btnNuevo").hide();
+    $("#VerListado").hide();
 
-		$("#txtIdArticulo").val(idarticulo);
-	    $("#cboCategoria").val(idcategoria);
-	    $("#cboUnidadMedida").val(idunidad_medida);
-	    $("#txtNombre").val(nombre);
-	    $("#txtDescripcion").val(descripcion);
-	   // $("#imagenArt").val(imagen);
-	    $("#txtRutaImgArt").val(imagen);
-	    $("#txtRutaImgArt").show();
-	    //$("#txtRutaImgArt").prop("disabled", true);
+    $("#txtIdArticulo").val(idarticulo);
+    $("#cboCategoria").val(idcategoria);
+    $("#cboUnidadMedida").val(idunidad_medida);
+    $("#txtNombre").val(nombre);
+    $("#txtDescripcion").val(descripcion);
+    // $("#imagenArt").val(imagen);
+    $("#txtRutaImgArt").val(imagen);
+    $("#txtRutaImgArt").show();
+    //$("#txtRutaImgArt").prop("disabled", true);
+}
+
+function detalleArticulo(idarticulo, precio_compra, precio_ventadistribuidor, precio_ventapublico, stock_actual){
+    $("#VerForm2").show();
+    $("#btnNuevo").hide();
+    $("#VerListado").hide();
+
+    $("#txtIdArticulo").val(idarticulo);
+    $("#txtPrecioCompra").val(precio_compra);
+    $("#txtPrecioVentaDistribuidor").val(precio_ventadistribuidor);
+    $("#txtPrecioVentaUnitario").val(precio_ventapublico);
+    $("#txtStockActual").val(stock_actual);
+    
+    
+    $("#txtRutaImgArt").show();
+    //$("#txtRutaImgArt").prop("disabled", true);
 }
