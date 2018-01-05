@@ -480,8 +480,9 @@ function ConsultarDetallesPed() {
         var suma = 0;
         var data = JSON.parse(objinit.consultar());
         for (var pos in data) {
-            suma += parseFloat(data[pos][3] * (data[pos][2] - data[pos][4]));
+            suma += parseFloat(data[pos][3] * (data[pos][2]));
         }
+        suma = suma - data[pos][4];
         calcularIgvPed();
         calcularSubTotalPed();
         $("#txtTotalPed").val(Math.round(suma*100)/100);
