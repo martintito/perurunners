@@ -153,7 +153,7 @@ function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, de
     //$("#txtRutaImgArt").prop("disabled", true);
 }
 
-function detalleArticulo(idarticulo, precio_compra, precio_ventadistribuidor, precio_ventapublico, stock_actual){
+function detalleArticulo(idarticulo, precio_compra, precio_ventadistribuidor, precio_ventapublico, stock_actual, nombre){
     $("#VerForm2").show();
     $("#btnNuevo").hide();
     $("#VerListado").hide();
@@ -163,6 +163,8 @@ function detalleArticulo(idarticulo, precio_compra, precio_ventadistribuidor, pr
     $("#txtPrecioVentaDistribuidor").val(precio_ventadistribuidor);
     $("#txtPrecioVentaUnitario").val(precio_ventapublico);
     $("#txtStockActual").val(stock_actual);
+    $("#txtNombreArticulo").val(nombre);    
+    $("#catalogoArticulos").val('Detalle de Artículo');    
     
     
     $("#txtRutaImgArt").show();

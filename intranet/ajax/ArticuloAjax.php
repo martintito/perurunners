@@ -73,36 +73,8 @@ switch ($_GET["op"]) {
 
         $query_Tipo = $objArticulo->Listar();
         $data = Array();
-
-        //------------------------------------
-        //$idIngreso = $_POST["idIngreso"];
-        $idIngreso = 652;
-        $query_prov = $objArticulo->GetDetalleArticulo($idIngreso);
-
-        $ii = 1;
-        while ($reg = $query_prov->fetch_object()) {
-
-                echo $reg->articulo;
-                echo $reg->sub_total;
-
-            $ii++;
-        }
-
-
-//        $query_prov->codigo
-//        $query_prov->serie
-//        $query_prov->descripcion
-//        $query_prov->stock_ingreso
-//        $query_prov->precio_compra
-//        $query_prov->precio_ventadistribuidor
-//        $query_prov->precio_ventapublico
-        //------------------------------------
         $i = 1;
         while ($reg = $query_Tipo->fetch_object()) {
-
-
-
-
             $data[] = array("id" => $i,
                 "1" => $reg->categoria,
                 "2" => $reg->unidadMedida,
@@ -110,8 +82,8 @@ switch ($_GET["op"]) {
                 "4" => $reg->descripcion,
                 "5" => '<img width=100px height=100px src="./' . $reg->imagen . '" />',
                 '<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataArticulo(' . $reg->idarticulo . ',\'' . $reg->idcategoria . '\',\'' . $reg->idunidad_medida . '\',\'' . $reg->nombre . '\',\'' . $reg->descripcion . '\',\'' . $reg->imagen . '\')"><i class="fa fa-pencil"></i> </button>&nbsp;' .
-                '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarArticulo(' . $reg->idarticulo . ')"><i class="fa fa-trash"></i> </button>' .
-                '<button class="btn btn-info" data-toggle="tooltip" title="Detalle" onclick="detalleArticulo(' . $reg->idarticulo . ',\'' . $reg->precio_compra . '\',\'' . $reg->precio_ventadistribuidor . '\',\'' . $reg->precio_ventapublico . '\',\'' . $reg->stock_actual . '\')"><i class="fa fa-info"></i> </button>');
+                '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarArticulo(' . $reg->idarticulo . ')"><i class="fa fa-trash"></i> </button>&nbsp;' .
+                '<button class="btn btn-info" data-toggle="tooltip" title="Detalle" onclick="detalleArticulo(' . $reg->idarticulo . ',\'' . $reg->precio_compra . '\',\'' . $reg->precio_ventadistribuidor . '\',\'' . $reg->precio_ventapublico . '\',\'' . $reg->stock_actual . '\',\'' . $reg->nombre . '\')"><i class="fa fa-eye"></i> </button>');
             $i++;
         }
         $results = array(
