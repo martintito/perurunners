@@ -16,7 +16,6 @@ function init() {
     ComboCategoria();
     ComboUM();
     $("#VerForm").hide();
-    $("#VerForm2").hide();
     $("#txtRutaImgArt").hide();
     $("form#frmArticulos").submit(SaveOrUpdate);
 
@@ -69,21 +68,9 @@ function init() {
         $("#btnNuevo").hide();
         $("#VerListado").hide();
     }
-    
-    function VerForm2() {
-        $("#VerForm2").show();
-        $("#btnNuevo").hide();
-        $("#VerListado").hide();
-    }
 
     function OcultarForm() {
         $("#VerForm").hide();// Mostramos el formulario
-        $("#btnNuevo").show();// ocultamos el boton nuevo
-        $("#VerListado").show();
-    }
-    
-    function OcultarForm2() {
-        $("#VerForm2").hide();// Mostramos el formulario
         $("#btnNuevo").show();// ocultamos el boton nuevo
         $("#VerListado").show();
     }
@@ -149,24 +136,6 @@ function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, de
     $("#txtDescripcion").val(descripcion);
     // $("#imagenArt").val(imagen);
     $("#txtRutaImgArt").val(imagen);
-    $("#txtRutaImgArt").show();
-    //$("#txtRutaImgArt").prop("disabled", true);
-}
-
-function detalleArticulo(idarticulo, precio_compra, precio_ventadistribuidor, precio_ventapublico, stock_actual, nombre){
-    $("#VerForm2").show();
-    $("#btnNuevo").hide();
-    $("#VerListado").hide();
-
-    $("#txtIdArticulo").val(idarticulo);
-    $("#txtPrecioCompra").val(precio_compra);
-    $("#txtPrecioVentaDistribuidor").val(precio_ventadistribuidor);
-    $("#txtPrecioVentaUnitario").val(precio_ventapublico);
-    $("#txtStockActual").val(stock_actual);
-    $("#txtNombreArticulo").val(nombre);    
-    $("#catalogoArticulos").val('Detalle de Artículo');    
-    
-    
     $("#txtRutaImgArt").show();
     //$("#txtRutaImgArt").prop("disabled", true);
 }

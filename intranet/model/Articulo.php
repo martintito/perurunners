@@ -34,21 +34,9 @@ class articulo {
 
     public function Listar() {
         global $conexion;
-        $sql = "select a.*, c.nombre as categoria, um.nombre as unidadMedida, "
-                . "di.*, (di.stock_ingreso * di.precio_compra) as sub_total "
-                . "from articulo a inner join categoria c on a.idcategoria = c.idcategoria "
-                . "inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida "
-                . "inner join detalle_ingreso di on a.idarticulo = di.idarticulo "
-                . "where a.estado = 'A' order by a.idarticulo desc";
-        $query = $conexion->query($sql);
-        return $query;
-    }
-
-    public function GetDetalleArticulo($idingreso) {
-        global $conexion;
-        $sql = "select a.nombre as articulo, di.*, (di.stock_ingreso * di.precio_compra) as sub_total
-	from detalle_ingreso di
-	inner join articulo a on di.idarticulo = a.idarticulo where di.idingreso = $idingreso";
+        $sql = "select a.*, c.nombre as categoria, um.nombre as unidadMedida 
+	from articulo a inner join categoria c on a.idcategoria = c.idcategoria
+	inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida where a.estado = 'A' order by idarticulo desc";
         $query = $conexion->query($sql);
         return $query;
     }
