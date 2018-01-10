@@ -79,11 +79,16 @@ switch ($_GET["op"]) {
                 "2" => $reg->unidadMedida,
                 "3" => $reg->nombre,
                 "4" => $reg->descripcion,
-                "5" => '<img width=100px height=100px src="./' . $reg->imagen . '" />',
+                "5" => $reg->precio_compra,
+                "6" => $reg->precio_ventadistribuidor,
+                "7" => $reg->precio_ventapublico,
+                "8" => $reg->stock_actual,                
+                "9" => '<img width=100px height=100px src="./' . $reg->imagen . '" />',
                 '<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataArticulo(' . $reg->idarticulo . ',\'' . $reg->idcategoria . '\',\'' . $reg->idunidad_medida . '\',\'' . $reg->nombre . '\',\'' . $reg->descripcion . '\',\'' . $reg->imagen . '\')"><i class="fa fa-pencil"></i> </button>&nbsp;' .
                 '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarArticulo(' . $reg->idarticulo . ')"><i class="fa fa-trash"></i> </button>');
             $i++;
-        }
+        }                 
+        
         $results = array(
             "sEcho" => 1,
             "iTotalRecords" => count($data),
