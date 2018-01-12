@@ -48,7 +48,8 @@ class articulo {
                 . "from articulo a inner join categoria c on a.idcategoria = c.idcategoria "
                 . "inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida "
                 . "inner join detalle_ingreso di on a.idarticulo = di.idarticulo "
-                . "where a.estado = 'A' order by a.idarticulo desc";
+                . "inner join ingreso ing on ing.idingreso = di.idingreso "
+                . "where a.estado = 'A' and ing.estado = 'A' order by a.idarticulo desc";
         $query = $conexion->query($sql);
         return $query;
     }
