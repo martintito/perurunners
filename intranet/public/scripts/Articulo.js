@@ -1,5 +1,7 @@
 $(document).on("ready", init);
 
+
+
 function init() {
 
     var tabla = $('#tblArticulos').dataTable({
@@ -20,6 +22,63 @@ function init() {
     $("form#frmArticulos").submit(SaveOrUpdate);
 
     $("#btnNuevo").click(VerForm);
+
+
+
+
+
+//--------------------------------------------modal
+
+$('#submitBtn').click(function(e) {
+    
+    var name = $.trim($('#txtNombre').val());
+    //var desc = $.trim($('#txtDescripcion').val());
+    
+
+    // Check if empty of not
+    if (name === '') {
+        //alert('Text-field is empty.');
+        if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de artículo es obligatorio!</b></div>");
+            }
+        return false;
+    }else{
+        $("#txtNombre").parent().next(".validation").remove();
+    }
+//    if (desc === '') {
+//        if ($("#txtDescripcion").parent().next(".validation").length == 0) // only add if not added
+//            {
+//                $("#txtDescripcion").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Completa este campo</div>");
+//            }
+//        return false;
+//    }else{
+//        $("#txtDescripcion").parent().next(".validation").remove();
+//    }
+    
+    e.preventDefault();
+    var msg = 'Souhaitez vous vraiment supprimer ce produit ?';
+    bootbox.confirm(msg, function(result) {
+        if (result) {
+            $('#frmArticulos').submit(); //aqui llega!!!
+        }
+    });
+});
+
+
+
+//
+//$('#frmArticulos').submit(function(e) {
+//        var currentForm = this;
+//        e.preventDefault();
+//        bootbox.confirm("Are you sure?", function(result) {
+//            if (result) {
+//                currentForm.submit();
+//            }
+//        });
+//    });
+
+//----------------------------------------fin modal
 
     function SaveOrUpdate(e) {
         e.preventDefault();
@@ -115,7 +174,7 @@ function ListadoArticulos() {
 }
 ;
 function eliminarArticulo(id) {
-    bootbox.confirm("¿Esta Seguro de eliminar la Articulo?", function (result) {
+    bootbox.confirm("¿Esta seguro de eliminar el artículo?", function (result) {
         if (result) {
             $.post("./ajax/ArticuloAjax.php?op=delete", {id: id}, function (e) {
 
@@ -127,6 +186,12 @@ function eliminarArticulo(id) {
 
     })
 }
+
+//function registrarArticulo() {
+//    $('#frmArticulos').submit();
+//}
+
+
 
 function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, descripcion, imagen) {
     $("#VerForm").show();
