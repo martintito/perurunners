@@ -17,6 +17,60 @@ function init(){
 	$("form#frmGlobal").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
+        
+        //--------------------------------------------modal de confirmacion
+    $('#submitBtnGlobal').click(function (e) {
+        var nombreEmpresa = $.trim($('#txtEmpresa').val());
+        var nombreImpuesto = $.trim($('#txtNombre_Impuesto').val());
+        var porcentajeImpuesto = $.trim($('#txtPorcentaje_Impuesto').val());
+        var simboloMoneda = $.trim($('#txtSimbolo_Moneda').val());
+        var imagenGlobal = $.trim($('#imagenGlobal').val());
+        // Check if empty of not
+        if (nombreEmpresa === '') {
+            if ($("#txtEmpresa").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtEmpresa").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de empresa es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtEmpresa").parent().next(".validation").remove();
+        }
+        if (nombreImpuesto === '') {
+            if ($("#txtNombre_Impuesto").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNombre_Impuesto").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de impuesto es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtNombre_Impuesto").parent().next(".validation").remove();
+        }
+        if (porcentajeImpuesto === '') {
+            if ($("#txtPorcentaje_Impuesto").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtPorcentaje_Impuesto").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El porcentaje de impuesto es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtPorcentaje_Impuesto").parent().next(".validation").remove();
+        }
+        if (simboloMoneda === '') {
+            if ($("#txtSimbolo_Moneda").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtSimbolo_Moneda").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El símbolo de la moneda es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtSimbolo_Moneda").parent().next(".validation").remove();
+        }
+        e.preventDefault();
+        var msg = '¿Está seguro de realizar esta operación?';
+        bootbox.confirm(msg, function (result) {
+            if (result) {
+                $('#frmGlobal').submit(); //aqui llega!!!
+            }
+        });
+    });
+    //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 			e.preventDefault();

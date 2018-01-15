@@ -18,6 +18,59 @@ function init(){
 	$("form#frmSucursal").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
+        
+        //--------------------------------------------modal de confirmacion
+    $('#submitBtnSucursal').click(function (e) {
+        var campo1 = $.trim($('#txtRazon_Social').val());
+        var campo2 = $.trim($('#txtNum_Documento').val());
+        var campo3 = $.trim($('#txtDireccion').val());
+        var campo4 = $.trim($('#txtTelefono').val());        
+        // Check if empty of not
+        if (campo1 === '') {
+            if ($("#txtRazon_Social").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtRazon_Social").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡La razón social es obligatoria!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtRazon_Social").parent().next(".validation").remove();
+        }
+        if (campo2 === '') {
+            if ($("#txtNum_Documento").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNum_Documento").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de documento es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtNum_Documento").parent().next(".validation").remove();
+        }
+        if (campo3 === '') {
+            if ($("#txtDireccion").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtDireccion").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡La dirección es obligatoria!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtDireccion").parent().next(".validation").remove();
+        }
+        if (campo4 === '') {
+            if ($("#txtTelefono").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtTelefono").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El teléfono es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtTelefono").parent().next(".validation").remove();
+        }
+        e.preventDefault();
+        var msg = '¿Está seguro de realizar esta operación?';
+        bootbox.confirm(msg, function (result) {
+            if (result) {
+                $('#frmSucursal').submit(); //aqui llega!!!
+            }
+        });
+    });
+    //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 		e.preventDefault();
