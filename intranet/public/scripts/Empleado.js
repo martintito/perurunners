@@ -19,6 +19,69 @@ function init(){
 	$("form#frmEmpleado").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
+        
+         //--------------------------------------------modal de confirmacion
+    $('#submitBtnSucursal').click(function (e) {
+        var campo1 = $.trim($('#txtApellidos').val());
+        var campo2 = $.trim($('#txtNombre').val());
+        var campo3 = $.trim($('#txtNum_Documento').val());
+        var campo4 = $.trim($('#txtLogin').val());    
+        var campo5 = $.trim($('#txtClave').val());
+        // Check if empty of not
+        if (campo1 === '') {
+            if ($("#txtApellidos").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtApellidos").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡Los apellidos son obligatorios!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtApellidos").parent().next(".validation").remove();
+        }
+        if (campo2 === '') {
+            if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtNombre").parent().next(".validation").remove();
+        }
+        if (campo3 === '') {
+            if ($("#txtNum_Documento").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNum_Documento").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El número de documento es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtNum_Documento").parent().next(".validation").remove();
+        }
+        if (campo4 === '') {
+            if ($("#txtLogin").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtLogin").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de usuario es obligatorio!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtLogin").parent().next(".validation").remove();
+        }
+        if (campo5 === '') {
+            if ($("#txtClave").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtClave").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡La clave es obligatoria!</b></div>");
+            }
+            return false;
+        } else {
+            $("#txtClave").parent().next(".validation").remove();
+        }
+        e.preventDefault();
+        var msg = '¿Está seguro de realizar esta operación?';
+        bootbox.confirm(msg, function (result) {
+            if (result) {
+                $('#frmEmpleado').submit(); //aqui llega!!!
+            }
+        });
+    });
+    //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 		e.preventDefault();
