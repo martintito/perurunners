@@ -51,9 +51,12 @@ class articulo {
 //                . "inner join ingreso ing on ing.idingreso = di.idingreso "
 //                . "where a.estado = 'A' and ing.estado = 'A' order by a.idarticulo desc";
         
-        $sql = "select a.*, c.nombre as categoria, um.nombre as unidadMedida, di.*, (di.stock_ingreso * di.precio_compra) as sub_total from articulo a inner join categoria c on a.idcategoria = c.idcategoria inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida left join (detalle_ingreso di inner join ingreso ing on ing.idingreso = di.idingreso and ing.estado = 'A') on a.idarticulo = di.idarticulo where a.estado = 'A' ORDER BY `a`.`idarticulo` DESC";
+        $sql = "select a.*, c.nombre as categoria, um.nombre as unidadMedida, di.precio_compra, di.precio_ventadistribuidor, di.precio_ventapublico, di.stock_actual, (di.stock_ingreso * di.precio_compra) as sub_total from articulo a inner join categoria c on a.idcategoria = c.idcategoria inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida left join (detalle_ingreso di inner join ingreso ing on ing.idingreso = di.idingreso and ing.estado = 'A') on a.idarticulo = di.idarticulo where a.estado = 'A' ORDER BY `a`.`idarticulo` DESC";
+//original        
+//        $sql = "select a.*, c.nombre as categoria, um.nombre as unidadMedida from articulo a inner join categoria c on a.idcategoria = c.idcategoria inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida where a.estado = 'A' order by idarticulo desc";
         
-        $query = $conexion->query($sql);
+        $query = $conexion->query($sql);      
+        
         return $query;
     }
 

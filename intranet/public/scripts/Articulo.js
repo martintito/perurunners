@@ -57,7 +57,7 @@ $('#submitBtn').click(function(e) {
 //    }
     
     e.preventDefault();
-    var msg = 'Souhaitez vous vraiment supprimer ce produit ?';
+    var msg = '¿Está seguro de registrar este articulo?';
     bootbox.confirm(msg, function(result) {
         if (result) {
             $('#frmArticulos').submit(); //aqui llega!!!
