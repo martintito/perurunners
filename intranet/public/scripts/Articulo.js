@@ -22,19 +22,10 @@ function init() {
     $("form#frmArticulos").submit(SaveOrUpdate);
 
     $("#btnNuevo").click(VerForm);
-
-
-
-
-
 //--------------------------------------------modal
-
-$('#submitBtn').click(function(e) {
-    
+$('#submitBtn').click(function(e) {    
     var name = $.trim($('#txtNombre').val());
-    //var desc = $.trim($('#txtDescripcion').val());
-    
-
+    //var desc = $.trim($('#txtDescripcion').val());  
     // Check if empty of not
     if (name === '') {
         //alert('Text-field is empty.');
@@ -54,10 +45,9 @@ $('#submitBtn').click(function(e) {
 //        return false;
 //    }else{
 //        $("#txtDescripcion").parent().next(".validation").remove();
-//    }
-    
+//    }    
     e.preventDefault();
-    var msg = '¿Está seguro de registrar este articulo?';
+    var msg = '¿Está seguro de realizar esta operación?';
     bootbox.confirm(msg, function(result) {
         if (result) {
             $('#frmArticulos').submit(); //aqui llega!!!

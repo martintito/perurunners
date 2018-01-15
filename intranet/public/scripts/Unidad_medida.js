@@ -17,6 +17,40 @@ function init(){
 	$("form#frmUnidad_Medida").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
+        
+    //--------------------------------------------modal de confirmacion
+$('#submitBtnUnidadMed').click(function(e) {    
+    var name = $.trim($('#txtNombre').val());
+    var desc = $.trim($('#txtPrefijo').val());  
+    // Check if empty of not
+    if (name === '') {
+        //alert('Text-field is empty.');
+        if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre es obligatorio!</b></div>");
+            }
+        return false;
+    }else{
+        $("#txtNombre").parent().next(".validation").remove();
+    }
+    if (desc === '') {
+        if ($("#txtPrefijo").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtPrefijo").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El prefijo es obligatorio!</b></div>");
+            }
+        return false;
+    }else{
+        $("#txtPrefijo").parent().next(".validation").remove();
+    }    
+    e.preventDefault();
+    var msg = '¿Está seguro de realizar esta operación?';
+    bootbox.confirm(msg, function(result) {
+        if (result) {
+            $('#frmUnidad_Medida').submit(); //aqui llega!!!
+        }
+    });
+});
+    //-----------------------------------------fin modal de confirmacion
 
     function SaveOrUpdate(e){
     		e.preventDefault();// para que no se recargue la pagina
