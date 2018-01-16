@@ -86,8 +86,6 @@ function init() {
         $("#txtTotal").val("23");
     });
 
-
-
 	function Agregar(){
         var idArt = document.getElementsByName("txtIdArticulo");
         var cod = document.getElementsByName("txtCodgo");
@@ -138,13 +136,20 @@ function init() {
                         detalle : detalle
                     };
                     
-                    $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
-                        swal("Mensaje del Sistema", r, "success");
-                        //alert(r);
-                        Limpiar();
-                        OcultarForm();
-                        ListadoIngresos();
+                    var msg = '¿Está seguro de realizar esta operación?';
+                    bootbox.confirm(msg, function (result) {
+                        if (result) {
+                            $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
+                            swal("Mensaje del Sistema", r, "success");
+                            //alert(r);
+                            Limpiar();
+                            OcultarForm();
+                            ListadoIngresos();
+                        });
+                        }
                     });
+                    
+                    
                 } else {
                     bootbox.alert("Debe agregar articulos al detalle");
                 }

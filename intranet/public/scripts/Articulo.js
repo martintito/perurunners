@@ -2,9 +2,9 @@ $(document).on("ready", init);
 
 
 
-function init() {
+function init() {    
 
-    var tabla = $('#tblArticulos').dataTable({
+    var tabla = $('#tblArticulos').dataTable({        
         dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
@@ -126,7 +126,8 @@ $('#submitBtn').click(function(e) {
 }
 function ListadoArticulos() {
     var tabla = $('#tblArticulos').dataTable(
-            {"aProcessing": true,
+            {   "pageLength": 5,
+                "aProcessing": true,
                 "aServerSide": true,
                 dom: 'Bfrtip',
                 buttons: [
