@@ -18,6 +18,39 @@ function init(){
 	$("form#frmCliente").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
+        
+        //--------------------------------------------modal de confirmacion
+        $('#submitBtnCliente').click(function (e) {
+            var campo1 = $.trim($('#txtNombre').val());
+            var campo2 = $.trim($('#txtNum_Documento').val());
+            // Check if empty of not
+            if (campo1 === '') {
+                if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre del cliente es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtNombre").parent().next(".validation").remove();
+            }
+            if (campo2 === '') {
+                if ($("#txtNum_Documento").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtNum_Documento").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El número de documento es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtNum_Documento").parent().next(".validation").remove();
+            }            
+            e.preventDefault();
+            var msg = '¿Está seguro de realizar esta operación?';
+            bootbox.confirm(msg, function (result) {
+                if (result) {
+                    $('#frmCliente').submit(); //aqui llega!!!
+                }
+            });
+        });
+        //-----------------------------------------fin modal de confirmacion
 
 
 	function SaveOrUpdate(e){

@@ -59,6 +59,39 @@ function init(){
                 }
         });
 	}).change(); */
+    
+    //--------------------------------------------modal de confirmacion
+        $('#submitBtnPagos').click(function (e) {
+            var campo1 = $.trim($('#txtSocio').val());
+            var campo2 = $.trim($('#txtMonto').val());
+            // Check if empty of not
+            if (campo1 === '') {
+                if ($("#txtSocio").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtSocio").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre del socio es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtSocio").parent().next(".validation").remove();
+            }
+            if (campo2 === '') {
+                if ($("#txtMonto").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtMonto").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El monto es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtMonto").parent().next(".validation").remove();
+            }            
+            e.preventDefault();
+            var msg = '¿Está seguro de realizar esta operación?';
+            bootbox.confirm(msg, function (result) {
+                if (result) {
+                    $('#frmPagos').submit(); //aqui llega!!!
+                }
+            });
+        });
+        //-----------------------------------------fin modal de confirmacion
 	
 	function SaveOrUpdate(e){
 		e.preventDefault();
