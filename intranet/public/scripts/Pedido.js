@@ -160,7 +160,10 @@ function init() {
                     detalle : detalle
                 };
                 
-                $.post("./ajax/PedidoAjax.php?op=Save", data, function(r){
+                var msg = '¿Está seguro de realizar esta operación?';
+                    bootbox.confirm(msg, function (result) {
+                        if (result) {
+                            $.post("./ajax/PedidoAjax.php?op=Save", data, function(r){
                             swal("Mensaje del Sistema", r, "success");
                             //delete this.elementos;
    
@@ -202,6 +205,10 @@ function init() {
                             });
                     
                 });
+                        }
+                    });
+                
+                
             } else {
                 bootbox.alert("Debe agregar articulos al detalle");
             }

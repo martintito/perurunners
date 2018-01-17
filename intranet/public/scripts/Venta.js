@@ -35,9 +35,10 @@ function init(){
 
 	function SaveOrUpdate(e){
 		e.preventDefault();// para que no se recargue la pagina
+                
 
         if ($("#txtSerieVent").val() != "" && $("#txtNumeroVent").val() != "") {
-            var detalle =  JSON.parse(consultarDet());
+            var detalle =  JSON.parse(consultarDet());          
 
             var data = { 
                 idUsuario : $("#txtIdUsuario").val(),
@@ -50,15 +51,18 @@ function init(){
                 impuesto : $("#txtImpuesto").val(),
                 total_vent : $("#txtTotalVent").val(),
                 detalle : detalle
-            };
-
-            $.post("./ajax/VentaAjax.php?op=SaveOrUpdate", data, function(r){// llamamos la url por post. function(r). r-> llamada del callback
+            };           
+            
+             var msg = '¿Está seguro de realizar esta operación?';
+                    bootbox.confirm(msg, function (result) {
+                        if (result) {
+                            $.post("./ajax/VentaAjax.php?op=SaveOrUpdate", data, function(r){// llamamos la url por post. function(r). r-> llamada del callback
                 if ($("#cboTipoComprobante").val() == "TICKET") {
                         //window.open("/solventas/Reportes/exTicket.php?id=" + $("#txtIdPedido").val() , "TICKET" , "width=396,height=430,scrollbars=NO");
                        // window.open("localhost/solventas/Reportes/exTicket.php?id=" + $("#txtIdPedido").val());
                         //location.href = "/solventas/Reportes/exTicket.php?id=" + $("#txtIdPedido").val();
 
-//LLAMADA AL TICKET
+                //LLAMADA AL TICKET
 					//location.href = "/intranet/Reportes/exTicket.php?id=" + $("#txtIdPedido").val();
                     window.open("/intranet/Reportes/exTicket.php?id=" + $("#txtIdPedido").val(), '_blank');
                 }
@@ -73,7 +77,7 @@ function init(){
                     LimpiarPedido();
 
                     bootbox.prompt({
-                      title: "Ingrese el correo para enviar el detalle de la compra",
+                      title: "Ingrese el correo para enviar el detalle de la comprassssssss",
                       value: email,
                       callback: function(result) {
                         if (result !== null) {                                             
@@ -88,7 +92,7 @@ function init(){
                 } else {
                     $("#btnNuevoPedido").show();
                     bootbox.prompt({
-                      title: "Ingrese el correo para enviar el detalle de la compra",
+                      title: "Ingrese el correo para enviar el detalle de la compraxxxxxxxxxxx",
                       value: email,
                       callback: function(result) {
                         if (result !== null) {   
@@ -112,6 +116,10 @@ function init(){
                 }
                 
             });
+                        }
+                    });
+
+            
         } else {
             bootbox.alert("Debe seleccionar un comprobante");
         }
