@@ -92,9 +92,10 @@ function init() {
 
 function ListadoCategorias() {
     var tabla = $('#tblCategorias').dataTable(
-            {"aProcessing": true,
+            {   "pageLength": 5, 
+                "aProcessing": true,
                 "aServerSide": true,
-                dom: 'Bfrtip',
+                dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',

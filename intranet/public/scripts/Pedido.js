@@ -21,7 +21,7 @@ function init() {
     //GetTotal(19);
 
     $('#tblPedidos').dataTable({
-        dom: 'Bfrtip',
+        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
         buttons: [
             'copyHtml5',
             'excelHtml5',

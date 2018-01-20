@@ -84,7 +84,7 @@ switch ($_GET["op"]) {
                 "7" => $reg->precio_ventapublico,
                 "8" => $reg->stock_actual,                
                 "9" => '<img width=100px height=100px src="./' . $reg->imagen . '" />',
-                '<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataArticulo(' . $reg->idarticulo . ',\'' . $reg->idcategoria . '\',\'' . $reg->idunidad_medida . '\',\'' . $reg->nombre . '\',\'' . $reg->descripcion . '\',\'' . $reg->imagen . '\')"><i class="fa fa-pencil"></i> </button>&nbsp;' .
+                '<button class="btn btn-warning" data-toggle="tooltip" title="Editaaaar" onclick="redirectPost(' . $reg->idarticulo . ',\'' . $reg->idcategoria . '\',\'' . $reg->idunidad_medida . '\',\'' . $reg->nombre . '\',\'' . $reg->descripcion . '\',\'' . $reg->imagen . '\')"><i class="fa fa-pencil"></i> </button>&nbsp;' .
                 '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarArticulo(' . $reg->idarticulo . ')"><i class="fa fa-trash"></i> </button>');
             $i++;
         }                 

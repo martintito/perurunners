@@ -1,5 +1,11 @@
 $(document).on("ready", init);
 
+$(document).ready(function() {
+    $('select#languages').change(function(){
+        window.location = $(this).val();
+    });
+});
+
 
 
 function init() {    
@@ -22,6 +28,20 @@ function init() {
     $("form#frmArticulos").submit(SaveOrUpdate);
 
     $("#btnNuevo").click(VerForm);
+    
+//------------------------------------------------
+
+$('#btnNuevo2').button().click(function() {
+    redirect_by_post('http://pamppi.info/jotform-testing/thankyou/postvars.php', {
+        variable1: 'Carlos',
+        variable2: 'Garcia'
+    }, true);
+});
+
+
+    ;
+//------------------------------------------------
+    
 //--------------------------------------------modal
 $('#submitBtn').click(function(e) {    
     var name = $.trim($('#txtNombre').val());
@@ -123,13 +143,14 @@ $('#submitBtn').click(function(e) {
         $("#btnNuevo").show();// ocultamos el boton nuevo
         $("#VerListado").show();
     }
+
 }
 function ListadoArticulos() {
     var tabla = $('#tblArticulos').dataTable(
-            {   "pageLength": 5,
+            {   "pageLength": 5,                
                 "aProcessing": true,
                 "aServerSide": true,
-                dom: 'Bfrtip',
+                dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',
@@ -199,3 +220,33 @@ function cargarDataArticulo(idarticulo, idcategoria, idunidad_medida, nombre, de
     $("#txtRutaImgArt").show();
     //$("#txtRutaImgArt").prop("disabled", true);
 }
+
+function redirect_by_post(purl, pparameters, in_new_tab) {
+    pparameters = (typeof pparameters == 'undefined') ? {} : pparameters;
+    in_new_tab = (typeof in_new_tab == 'undefined') ? true : in_new_tab;
+
+    var form = document.createElement("form");
+    $(form).attr("id", "reg-form").attr("name", "reg-form").attr("action", purl).attr("method", "post").attr("enctype", "multipart/form-data");
+    if (in_new_tab) {
+        $(form).attr("target", "_blank");
+    }
+    $.each(pparameters, function(key) {
+        $(form).append('<input type="text" name="' + key + '" value="' + this + '" />');
+    });
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    return false;
+}
+
+function redirectPost(idarticulo, idcategoria, idunidad_medida, nombre, descripcion, imagen) {
+        redirect_by_post('./ArticuloE.php', {
+        idarticulo: idarticulo,
+        idcategoria: idcategoria,
+        idunidad_medida: idunidad_medida,
+        nombre: nombre,
+        descripcion: descripcion,
+        imagen: imagen,
+    }, true);
+    }

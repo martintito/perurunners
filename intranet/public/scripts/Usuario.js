@@ -3,7 +3,7 @@ $(document).on("ready", init);
 function init(){
 	
 	$('#tblUsuarios').dataTable({
-	        dom: 'Bfrtip',
+	        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
 	        buttons: [
 	            'copyHtml5',
 	            'excelHtml5',

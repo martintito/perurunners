@@ -3,7 +3,7 @@ $(document).on("ready", init);// Inciamos el jquery
 function init(){
 	
     $('#tblTipo_Documento').dataTable({
-        dom: 'Bfrtip',
+        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
         buttons: [
             'copyHtml5',
             'excelHtml5',

@@ -14,7 +14,7 @@ function init() {
     sessionStorage.Sucursal = $("#txtSucursal").val();
 
     $('#tblIngresos').dataTable({
-        dom: 'Bfrtip',
+        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
         buttons: [
             'copyHtml5',
             'excelHtml5',
