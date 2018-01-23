@@ -150,7 +150,7 @@ function ListadoArticulos() {
             {   "pageLength": 5,                
                 "aProcessing": true,
                 "aServerSide": true,
-                dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+                dom: 'Bfrtip',
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',
@@ -250,3 +250,12 @@ function redirectPost(idarticulo, idcategoria, idunidad_medida, nombre, descripc
         imagen: imagen,
     }, true);
     }
+    
+function cargarDataArticulo2(idcategoria) {
+    
+//    $("#cboCategoria").val(31);
+    $("#txtNombre").val('nombre22222');
+
+    alert('OK esto aqui');
+    //$("#txtRutaImgArt").prop("disabled", true);
+}

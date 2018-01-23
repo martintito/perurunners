@@ -71,7 +71,7 @@ class articulo {
     
     public function Detalle($idarticulo) {
         global $conexion;
-        $sql = "select a.idarticulo, c.idcategoria, c.nombre as categoria, um.nombre as unidadMedida "
+        $sql = "select a.idarticulo, a.nombre as nombre, c.idcategoria, c.nombre as categoria, um.idunidad_medida, um.nombre as unidad_medida "
                 . "from articulo a inner join categoria c on a.idcategoria = c.idcategoria "
                 . "inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida "
                 . "where a.idarticulo = $idarticulo";

@@ -5,12 +5,17 @@
   //funciones a ejecutar
   
   function miFuncion() {
-			alert('OK');
-                        cargarDataArticulo(39);
+			
+                        //cargarDataArticulo2(29);
+//                        $("#cboCategoria").val(30);
+                        $("#txtNombre").val(<?php echo $arrayArticulo['nombre']; ?>);
+                        $("#txtDescripcion").val('descripcion');
+                        
 		}
 		window.onload=miFuncion;
 
 </script>
+
 <form role="form" name="frmArticulos" id="frmArticulos" enctype="multipart/form-data">
     <div class="row">
         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
@@ -21,24 +26,30 @@
             <div class="form-group  has-success">
                 <input id="txtIdArticulo" type="hidden" maxlength="50" class="form-control" name="txtIdArticulo" required="" placeholder="" autofocus="" value="<?php echo $_POST["idarticulo"] ?>" />
 
-                <select id="cboCategoria" name="cboCategoria" class="form-control">
-
+                <?php //echo 'añañañu!!!'.$arrayArticulo['idcategoria'] ?>
+                
+                <select id="cboCategoriaE" name="cboCategoriaE" class="form-control">
+                    <?php foreach ($arrayCategoria as $item){ ?>                    
+                    <option value="<?php echo $item['idcategoria'] ?>" <?php if($arrayArticulo['idcategoria']==$item['idcategoria']){ echo "selected"; } ?> ><?php echo $item['nombre'] ?></option>
+                    <?php } ?>
                 </select>
+                
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 left">
             <label>U. Medida (*):</label>
             <div class="form-group  has-success">
-
-                <select id="cboUnidadMedida" name="cboUnidadMedida" class="form-control">
-
+                <select id="cboUnidadMedidaE" name="cboUnidadMedidaE" class="form-control">
+                    <?php foreach ($arrayUnidad as $item){ ?>                    
+                    <option value="<?php echo $item['idunidad'] ?>" <?php if($arrayArticulo['unidad_medida']==$item['nombre']){ echo "selected"; } ?> ><?php echo $item['nombre'] ?></option>
+                    <?php } ?>
                 </select>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
             <label>Nombre (*):</label>
             <div class="form-group  has-success">                        
-                <input id="txtNombre" type="text" maxlength="50" class="form-control" name="txtNombre" required="" placeholder="Ingrese el nombre del artículo" autofocus="" />
+                <input id="txtNombre" type="text" maxlength="50" class="form-control" name="txtNombre" required="" placeholder="Ingrese el nombre del artículo" autofocus="" value='<?php echo $arrayArticulo['nombre']; ?>'/>
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
