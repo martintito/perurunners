@@ -1,6 +1,16 @@
 <h1>HEY HEY CAMAGUEY qqqqqqqqqqqq</h1>
 
+<script type="text/javascript">
 
+  //funciones a ejecutar
+  
+  function miFuncion() {
+			alert('OK');
+                        cargarDataArticulo(39);
+		}
+		window.onload=miFuncion;
+
+</script>
 <form role="form" name="frmArticulos" id="frmArticulos" enctype="multipart/form-data">
     <div class="row">
         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">

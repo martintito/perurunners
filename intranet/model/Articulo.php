@@ -68,5 +68,15 @@ class articulo {
         $query = $conexion->query($sql);
         return $query;
     }
+    
+    public function Detalle($idarticulo) {
+        global $conexion;
+        $sql = "select a.idarticulo, c.idcategoria, c.nombre as categoria, um.nombre as unidadMedida "
+                . "from articulo a inner join categoria c on a.idcategoria = c.idcategoria "
+                . "inner join unidad_medida um on a.idunidad_medida = um.idunidad_medida "
+                . "where a.idarticulo = $idarticulo";
+        $query = $conexion->query($sql);
+        return $query;
+    }
 
 }
