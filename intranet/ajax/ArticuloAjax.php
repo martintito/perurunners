@@ -56,6 +56,55 @@ switch ($_GET["op"]) {
         }
 
         break;
+        
+    case 'SaveOrUpdateE':
+
+        $idcategoria = $_POST["cboCategoriaE"];
+        $idunidad_medida = $_POST["cboUnidadMedidaE"];
+        $nombre = $_POST["txtNombre"];
+        $descripcion = $_POST["txtDescripcion"];
+        $imagen = $_FILES["imagenArt"]["tmp_name"];
+        $ruta = $_FILES["imagenArt"]["name"];
+
+        if (move_uploaded_file($imagen, "../Files/Articulo/" . $ruta)) {
+
+            if (empty($_POST["txtIdArticulo"])) {
+
+                if ($objArticulo->Registrar($idcategoria, $idunidad_medida, $nombre, $descripcion, "Files/Articulo/" . $ruta)) {
+                    echo "Articulo Registrado";
+                } else {
+                    echo "Articulo no ha podido ser registado.";
+                }
+            } else {
+
+                $idarticulo = $_POST["txtIdArticulo"];
+                if ($objArticulo->Modificar($idarticulo, $idcategoria, $idunidad_medida, $nombre, $descripcion, "Files/Articulo/" . $ruta)) {
+                    echo "Informacion del Articulo ha sido actualizada";
+                } else {
+                    echo "Informacion del Articulo no ha podido ser actualizada.";
+                }
+            }
+        } else {
+            $ruta_img = $_POST["txtRutaImgArt"];
+            if (empty($_POST["txtIdArticulo"])) {
+
+                if ($objArticulo->Registrar($idcategoria, $idunidad_medida, $nombre, $descripcion, $ruta_img)) {
+                    echo "Articulo Registrado";
+                } else {
+                    echo "Articulo no ha podido ser registado.";
+                }
+            } else {
+
+                $idarticulo = $_POST["txtIdArticulo"];
+                if ($objArticulo->Modificar($idarticulo, $idcategoria, $idunidad_medida, $nombre, $descripcion, $ruta_img)) {
+                    echo "Informacion del Articulo ha sido actualizada";
+                } else {
+                    echo "Informacion del Articulo no ha podido ser actualizada.";
+                }
+            }
+        }
+
+        break;
 
     case "delete":
 
@@ -84,7 +133,7 @@ switch ($_GET["op"]) {
                 "7" => $reg->precio_ventapublico,
                 "8" => $reg->stock_actual,                
                 "9" => '<img width=100px height=100px src="./' . $reg->imagen . '" />',
-                '<button class="btn btn-warning" data-toggle="tooltip" title="Editaaaar"><a href="./ArticuloE.php?id=' . $reg->idarticulo . '"><i class="fa fa-pencil"></i></a> </button>&nbsp;' .
+                '<button class="btn btn-warning" data-toggle="tooltip" title="Editaaaar"><a href="./ArticuloE.php?id=' . $reg->idarticulo . '" target="_blank"><i class="fa fa-pencil"></i></a> </button>&nbsp;' .
                 '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarArticulo(' . $reg->idarticulo . ')"><i class="fa fa-trash"></i> </button>');
             $i++;
         }                 

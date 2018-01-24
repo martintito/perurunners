@@ -3,17 +3,28 @@ require_once "./model/Articulo.php";
 	session_start();
 
 	if(isset($_SESSION["idusuario"]) && $_SESSION["mnu_almacen"] == 1){
+            
+////            print_r(is_int($_GET['id']));exit;
+//            if (is_int($_GET['id'])) {
+//                echo "La variable es entera";exit;
+//            }else{
+//                echo "La variable no es entera";exit;
+//            }
 
-		
-                $objArticulo = new Articulo();                
+	if(!(ctype_digit($_GET['id'])) || empty($_GET['id']) || $_GET['id'] == null){
+             header("Location:Articulo.php");
+            
+        } else {
+           $objArticulo = new Articulo();                
                 $query_Articulo = $objArticulo->Detalle($_GET['id']);
                 $arrayArticulo = array();
                 $j = 0;
                 while ($reg = $query_Articulo->fetch_object()) {
                     $arrayArticulo['idcategoria'] = $reg->idcategoria;                              
                     $arrayArticulo['nombre'] = $reg->nombre;
+                    $arrayArticulo['descripcion'] = $reg->descripcion;
                     $arrayArticulo['unidad_medida'] = $reg->unidad_medida;
-                    print_r($reg);
+//                    print_r($reg);
                     $j++;
                 }
                 
@@ -28,7 +39,9 @@ require_once "./model/Articulo.php";
                     $arrayCategoria[$i]['idcategoria'] = $regcat->idcategoria;                              
                     $arrayCategoria[$i]['nombre'] = $regcat->nombre;
                     $i++;
-                }                            
+                } 
+                
+//                print_r($arrayCategoria);
 
                 $query_Unidad = $objCategoria->ListarUM();
                 $arrayUnidad = array();
@@ -43,12 +56,15 @@ require_once "./model/Articulo.php";
                 
                 if ($_SESSION["superadmin"] != "S") {
 			include "view/header.html";
-                        print_r($_GET);
+//                        print_r($_GET);
 			include "view/ArticuloE.php";
 		} else {
 			include "view/headeradmin.html";
 			include "view/ArticuloE.php";
 		}
+        }
+            
+                
 
 		include "view/footer.html";
 	} else {

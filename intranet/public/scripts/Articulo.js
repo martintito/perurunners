@@ -26,6 +26,7 @@ function init() {
     $("#VerForm").hide();
     $("#txtRutaImgArt").hide();
     $("form#frmArticulos").submit(SaveOrUpdate);
+    $("form#frmArticulosE").submit(SaveOrUpdateE);
 
     $("#btnNuevo").click(VerForm);
     
@@ -44,8 +45,7 @@ $('#btnNuevo2').button().click(function() {
     
 //--------------------------------------------modal
 $('#submitBtn').click(function(e) {    
-    var name = $.trim($('#txtNombre').val());
-    //var desc = $.trim($('#txtDescripcion').val());  
+    var name = $.trim($('#txtNombre').val()); 
     // Check if empty of not
     if (name === '') {
         //alert('Text-field is empty.');
@@ -56,16 +56,7 @@ $('#submitBtn').click(function(e) {
         return false;
     }else{
         $("#txtNombre").parent().next(".validation").remove();
-    }
-//    if (desc === '') {
-//        if ($("#txtDescripcion").parent().next(".validation").length == 0) // only add if not added
-//            {
-//                $("#txtDescripcion").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Completa este campo</div>");
-//            }
-//        return false;
-//    }else{
-//        $("#txtDescripcion").parent().next(".validation").remove();
-//    }    
+    }  
     e.preventDefault();
     var msg = '¿Está seguro de realizar esta operación?';
     bootbox.confirm(msg, function(result) {
@@ -75,7 +66,27 @@ $('#submitBtn').click(function(e) {
     });
 });
 
-
+$('#submitBtnE').click(function(e) {    
+    var name = $.trim($('#txtNombre').val()); 
+    // Check if empty of not
+    if (name === '') {
+        //alert('Text-field is empty.');
+        if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+            {
+                $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre de artículo es obligatorio!</b></div>");
+            }
+        return false;
+    }else{
+        $("#txtNombre").parent().next(".validation").remove();
+    }  
+    e.preventDefault();
+    var msg = '¿Está seguro de realizar esta operación?';
+    bootbox.confirm(msg, function(result) {
+        if (result) {
+            $('#frmArticulosE').submit(); //aqui llega!!!
+        }
+    });
+});
 
 //
 //$('#frmArticulos').submit(function(e) {
@@ -109,6 +120,31 @@ $('#submitBtn').click(function(e) {
                 ListadoArticulos();
                 OcultarForm();
                 $('#frmArticulos').trigger("reset");
+            }
+
+        });
+    }
+    ;
+    
+    function SaveOrUpdateE(e) {
+        e.preventDefault();
+
+        var formData = new FormData($("#frmArticulosE")[0]);
+
+        $.ajax({
+            url: "./ajax/ArticuloAjax.php?op=SaveOrUpdateE",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (datos)
+
+            {
+
+                swal("Mensaje del Sistema", datos, "success");
+                ListadoArticulos();
+                OcultarForm();
+                //$('#frmArticulosE').trigger("reset");
             }
 
         });
@@ -254,8 +290,8 @@ function redirectPost(idarticulo, idcategoria, idunidad_medida, nombre, descripc
 function cargarDataArticulo2(idcategoria) {
     
 //    $("#cboCategoria").val(31);
-    $("#txtNombre").val('nombre22222');
-
-    alert('OK esto aqui');
+//    $("#txtNombre").val('nombre22222');
+//
+//    alert('OK esto aqui');
     //$("#txtRutaImgArt").prop("disabled", true);
 }
