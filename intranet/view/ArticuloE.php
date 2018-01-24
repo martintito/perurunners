@@ -5,6 +5,7 @@ function miFuncion() {
     }
 window.onload=miFuncion;
 </script>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="box-header with-border">
