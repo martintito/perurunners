@@ -1,3 +1,10 @@
+<script type="text/javascript">
+//funciones a ejecutar
+function miFuncion() {
+    $("#txtRutaImgArt").show();                      
+    }
+window.onload=miFuncion;
+</script>
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="box-header with-border">
@@ -59,7 +66,7 @@
                     <div class="form-group  has-success">
 
                         <input id="imagenArt" type="file" class="form-control" name="imagenArt" autofocus="" />
-                        <input id="txtRutaImgArt" type="text" class="form-control" name="txtRutaImgArt" autofocus="" />
+                        <input id="txtRutaImgArt" type="text" class="form-control" name="txtRutaImgArt" autofocus="" value="<?php echo $arrayArticulo['imagen']; ?>" />
                     </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
@@ -73,7 +80,3 @@
         </form>
     </div>
 </div>
-
-
-
-

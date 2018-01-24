@@ -287,11 +287,3 @@ function redirectPost(idarticulo, idcategoria, idunidad_medida, nombre, descripc
     }, true);
     }
     
-function cargarDataArticulo2(idcategoria) {
-    
-//    $("#cboCategoria").val(31);
-//    $("#txtNombre").val('nombre22222');
-//
-//    alert('OK esto aqui');
-    //$("#txtRutaImgArt").prop("disabled", true);
-}

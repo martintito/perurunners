@@ -24,6 +24,7 @@ require_once "./model/Articulo.php";
                     $arrayArticulo['nombre'] = $reg->nombre;
                     $arrayArticulo['descripcion'] = $reg->descripcion;
                     $arrayArticulo['unidad_medida'] = $reg->unidad_medida;
+                    $arrayArticulo['imagen'] = $reg->imagen;
 //                    print_r($reg);
                     $j++;
                 }
