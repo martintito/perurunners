@@ -13,8 +13,8 @@ function init() {
     sessionStorage.idSucursal = $("#txtIdSucursal").val();
     sessionStorage.Sucursal = $("#txtSucursal").val();
 
-    $('#tblIngresos').dataTable({
-        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+    $('#tblIngresos').dataTable({        
+        dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
             'excelHtml5',

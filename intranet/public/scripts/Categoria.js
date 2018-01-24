@@ -95,7 +95,7 @@ function ListadoCategorias() {
             {   "pageLength": 5, 
                 "aProcessing": true,
                 "aServerSide": true,
-                dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+                dom: 'Bfrtip',
                 buttons: [
                     'copyHtml5',
                     'excelHtml5',

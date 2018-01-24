@@ -6,7 +6,7 @@ function init(){
 
     //Ver();
 	$('#tblVentaPedido').dataTable({
-        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+        dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
             'excelHtml5',

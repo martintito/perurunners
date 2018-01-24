@@ -3,7 +3,7 @@ $(document).on("ready", init);// Inciamos el jquery
 function init(){
 	
     $('#tblUnidad_Medida').dataTable({
-        dom: '<"top"iflp<"clear">>rt<"bottom"iflp<"clear">>',
+        dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
             'excelHtml5',
