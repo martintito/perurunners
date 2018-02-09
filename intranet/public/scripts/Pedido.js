@@ -406,7 +406,7 @@ function init() {
 };
 
 function ListadoPedidos(){ 
-            var tabla = $('#tblPedidos').dataTable(
+            var tabla = $('#tblPedidos2').dataTable(
             {   "aProcessing": true,
             "aServerSide": true,
             dom: 'Bfrtip',
