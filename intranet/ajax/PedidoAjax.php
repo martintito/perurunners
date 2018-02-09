@@ -66,8 +66,9 @@ switch ($_GET["op"]) {
                     "2"=>($reg->tipo_pedido=="Pedido")?'<span class="badge bg-blue">Pedido</span>':(($reg->tipo_pedido=="Venta")?'<span class="badge bg-aqua">Venta</span>':'<span class="badge bg-green">Proforma</span>'),
                     "3"=>$reg->fecha,
                     "4"=>$reg_total->Total,
-                    "5"=>($reg->estado=="A")?'<span class="badge bg-green">ACEPTADO</span>':'<span class="badge bg-red">CANCELADO</span>',
-                    "6"=>($reg->estado=="A")?'<button class="btn btn-success" data-toggle="tooltip" title="Ver Detalle" onclick="cargarDataPedido('.$reg->idpedido.',\''.$reg->tipo_pedido.'\',\''.$reg->numero.'\',\''.$reg->Cliente.'\',\''.$reg_total->Total.'\',\''.$reg->email.'\')" ><i class="fa fa-eye"></i> </button>&nbsp'.
+                    "5"=>$reg->comprobante,
+                    "6"=>($reg->estado=="A")?'<span class="badge bg-green">ACEPTADO</span>':'<span class="badge bg-red">CANCELADO</span>',
+                    "7"=>($reg->estado=="A")?'<button class="btn btn-success" data-toggle="tooltip" title="Ver Detalle" onclick="cargarDataPedido('.$reg->idpedido.',\''.$reg->tipo_pedido.'\',\''.$reg->numero.'\',\''.$reg->Cliente.'\',\''.$reg_total->Total.'\',\''.$reg->email.'\')" ><i class="fa fa-eye"></i> </button>&nbsp'.
                     '<button class="btn btn-warning" data-toggle="tooltip" title="Anular Venta" onclick="cancelarPedido('.$reg->idpedido.')" ><i class="fa fa-times-circle"></i> </button>&nbsp'.
                     '<a href="./Reportes/exVenta.php?id='.$reg->idpedido.'" class="btn btn-primary" data-toggle="tooltip" title="Imprimir" target="blanck" ><i class="fa fa-file-text"></i> </a>':
                     '<button class="btn btn-success" data-toggle="tooltip" title="Ver Detalle" onclick="cargarDataPedido('.$reg->idpedido.',\''.$reg->tipo_pedido.'\',\''.$reg->numero.'\',\''.$reg->Cliente.'\',\''.$reg_total->Total.'\')" ><i class="fa fa-eye"></i> </button>&nbsp'.

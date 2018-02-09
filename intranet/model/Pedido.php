@@ -32,9 +32,13 @@
 
 		public function Listar($idsucursal){
 			global $conexion;
-			$sql = "select p.*, c.nombre as Cliente, c.email 
-			from pedido p inner join persona c on p.idcliente = c.idpersona where p.idsucursal = $idsucursal 
-			and c.tipo_persona = 'Cliente' and p.tipo_pedido = 'Venta' order by idpedido desc limit 0,2999";
+			$sql = "select p.*, c.nombre as Cliente, c.email, v.tipo_comprobante as comprobante
+			from pedido p 
+                        inner join persona c on p.idcliente = c.idpersona 
+                        inner join venta v on v.idpedido=p.idpedido
+                        where p.idsucursal = $idsucursal 
+			and c.tipo_persona = 'Cliente' and p.tipo_pedido = 'Venta'                         
+                        order by idpedido desc limit 0,2999";
 			$query = $conexion->query($sql);
 			return $query;
 		}
