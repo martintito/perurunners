@@ -17,7 +17,29 @@ function init(){
 	$("form#frmTipo_Documento").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
-
+        
+         //--------------------------------------------modal de confirmacion
+        $('#submitBtnTipoDocumento').click(function (e) {
+            var name = $.trim($('#txtNombre').val());            
+            // Check if empty of not
+            if (name === '') {
+                if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El nombre del documento es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtNombre").parent().next(".validation").remove();
+            }            
+            e.preventDefault();
+            var msg = '¿Está seguro de realizar esta operación qwerty?';
+            bootbox.confirm(msg, function (result) {
+                if (result) {
+                    $('#frmTipo_Documento').submit(); //aqui llega!!!
+                }
+            });
+        });
+        //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 		e.preventDefault();// para que no se recargue la pagina

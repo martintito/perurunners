@@ -18,6 +18,38 @@ function init(){
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
 
+         //--------------------------------------------modal de confirmacion
+        $('#submitBtnTipoPago').click(function (e) {
+            var name = $.trim($('#txtNombre').val());
+            var monto = $.trim($('#txtMonto').val());
+            // Check if empty of not
+            if (name === '') {
+                if ($("#txtNombre").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtNombre").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡La descripción del tipo de pago es obligatoria!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtNombre").parent().next(".validation").remove();
+            }
+            if (monto === '') {
+                if ($("#txtMonto").parent().next(".validation").length == 0) // only add if not added
+                {
+                    $("#txtMonto").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'><b>¡El monto del tipo de pago es obligatorio!</b></div>");
+                }
+                return false;
+            } else {
+                $("#txtMonto").parent().next(".validation").remove();
+            }
+            e.preventDefault();
+            var msg = '¿Está seguro de realizar esta operación?';
+            bootbox.confirm(msg, function (result) {
+                if (result) {
+                    $('#frmTipo_Pago').submit(); //aqui llega!!!
+                }
+            });
+        });
+        //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 		e.preventDefault();// para que no se recargue la pagina

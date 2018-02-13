@@ -30,6 +30,20 @@ function init(){
 
 		$("#modalListadoEmpleados").modal("hide");
 	});
+        
+         //--------------------------------------------modal de confirmacion
+        $('#submitBtnUsuarios').click(function (e) {
+
+
+            e.preventDefault();
+            var msg = '¿Está seguro de realizar esta operación?';
+            bootbox.confirm(msg, function (result) {
+                if (result) {
+                    $('#frmUsuarios').submit(); //aqui llega!!!
+                }
+            });
+        });
+    //-----------------------------------------fin modal de confirmacion
 
 	function SaveOrUpdate(e){
 		e.preventDefault();
