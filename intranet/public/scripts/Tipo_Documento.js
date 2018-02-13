@@ -32,7 +32,7 @@ function init(){
                 $("#txtNombre").parent().next(".validation").remove();
             }            
             e.preventDefault();
-            var msg = '¿Está seguro de realizar esta operación qwerty?';
+            var msg = '¿Está seguro de realizar esta operación?';
             bootbox.confirm(msg, function (result) {
                 if (result) {
                     $('#frmTipo_Documento').submit(); //aqui llega!!!
